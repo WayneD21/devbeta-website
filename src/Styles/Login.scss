@@ -1,0 +1,183 @@
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(0deg, rgb(211 220 255), rgb(255, 255, 255));
+  position: relative;
+}
+.login-content::before {
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 250px;
+  background: var(--violet-1);
+  top: -190px;
+  left: 200px;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.login-content .ant-input-affix-wrapper:focus,
+.login-content .ant-input-affix-wrapper:focus-within {
+  font-size: 14px !important;
+}
+.tabs-login.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--blue);
+}
+.tabs-login.ant-tabs .ant-tabs-tab {
+  color: var(--text-unselected);
+}
+
+// form-item ------------------------------------
+.login-content .ant-input-affix-wrapper {
+  border-radius: 10px;
+  background: rgb(232 240 254);
+}
+.login-content .ant-input-outlined:hover {
+  border-color: var(--blue-ice);
+}
+.login-content .ant-input-outlined:focus,
+.login-content .ant-input-outlined:focus-within {
+  border-color: var(--blue-ice);
+}
+.login-form-nef .ant-form-item {
+  margin-bottom: 16px;
+}
+.login-form-nef .ant-checkbox-label {
+  color: var(--than);
+  font-weight: 500;
+}
+.login-form-nef .forgot-password {
+  color: var(--red-d);
+  font-weight: 500;
+}
+.login-form-nef .forgot-password:hover {
+  opacity: 0.8;
+  color: var(--red-d);
+}
+
+// content ------------------------------------
+.login-content .ant-pro-form-login-container {
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  border-radius: 18px;
+  padding: 68px 24px 46px 24px;
+  background-image: url('/images/bg-loginnef.svg');
+  background-size: cover;
+  box-shadow: var(--boxshadow-drop-card);
+}
+.ant-pro-form-login-top {
+  text-align: center;
+  justify-items: center;
+}
+.ant-pro-form-login-header {
+  height: 100px;
+  width: 100px;
+  display: revert;
+  margin-bottom: 20px;
+}
+.ant-pro-form-login-logo {
+  width: 80px;
+  height: 80px;
+  margin-inline-end: 16px;
+  vertical-align: top;
+}
+
+// button submit ------------------------------------
+.login-form-nef .ant-btn {
+  background: linear-gradient(158deg, var(--violet-1), rgba(179, 199, 248, 1)) !important;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+.login-form-nef .ant-btn:hover {
+  background: linear-gradient(160deg, var(--violet-1), rgba(179, 199, 248, 1)) !important;
+  border: none;
+}
+
+// button google ------------------------------------
+.gsibtn {
+  background: var(--white);
+  border: 1px solid var(--violet-light);
+  box-shadow: 0px 0px 1px 0 var(--violet-1);
+  transition: all 0.12s ease-out;
+  width: 199px;
+}
+.gsibtn .gsibtn-contents {
+  font-weight: 600;
+  font-size: var(--font-15);
+  color: var(--purple-d);
+}
+.gsibtn .gsibtn-content-wrapper {
+  flex-direction: row-reverse;
+}
+.gsibtn:hover {
+  background: var(--white);
+}
+.gsibtn:active,
+.gsibtn:focus {
+  background: var(--white);
+}
+.gsibtn:not(:disabled):hover .gsibtn-state {
+  opacity: 1;
+  background: transparent;
+}
+.gsibtn .gsibtn-icon {
+  margin: 0 20px 0 0;
+}
+.gsibtn:not(:disabled):hover {
+  box-shadow: 3px 2px 4px 0 var(--violet-1);
+  border: 1px solid var(--violet-light);
+}
+.login-content .ant-input-affix-wrapper-lg {
+  font-size: var(--font-14) !important;
+}
+
+// ============================================= RESPONSIVE =============================================
+
+// MOBILE ------------------------------------
+// @media (max-width: 375px) {
+// }
+
+// @media (max-width: 399px) {
+
+// }
+
+// @media (min-width: 400px) {
+
+// }
+
+@media (max-width: 739px) {
+  // .login-content::before {
+
+  // }
+  .login-content .ant-pro-form-login-container {
+    height: 590px;
+  }
+}
+
+// TABLET ------------------------------------
+// @media (min-width: 740px) {
+// }
+
+@media (max-width: 1023px) {
+}
+
+@media (min-width: 740px) and (max-width: 1024px) {
+}
+
+@media (max-width: 1279px) {
+}
+
+// PC ------------------------------------
+// @media (min-width: 1024px) {
+// }
+
+// @media (min-width: 1024px) and (max-width: 1039px) {
+// }
+
+// @media (min-width: 1040px) {
+// }

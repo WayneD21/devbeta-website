@@ -1,0 +1,114 @@
+.wrap-footer {
+  width: 100%;
+}
+.wrap-footer .footer-container {
+  width: 1012px;
+  margin: 0 auto;
+  padding: 45px 12px 24px 12px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background: linear-gradient(200deg, #283e51, #4b79a1);
+}
+.ant-image .logo-img-footer.ant-image-img {
+  width: 50px;
+}
+.wrap-logo-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.app-name-footer {
+  font-size: var(--font-25);
+  font-weight: 600;
+  color: var(--white);
+}
+.footer-container .list-items {
+  margin-bottom: 12px;
+}
+.list-items .title {
+  color: var(--white);
+  font-weight: 600;
+  font-size: var(--font-16);
+  margin: 0 0 8px 0;
+  cursor: default;
+}
+.list-items .desc {
+  color: var(--white);
+  font-size: var(--font-14);
+  font-weight: 300;
+  margin: 8px 0;
+}
+.list-items .desc a {
+  color: var(--white);
+  font-size: var(--font-14);
+  font-weight: 300;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: all 0.2s ease-out;
+}
+.list-items .desc a:hover {
+  background: var(--white-20);
+}
+// contact --------------------
+.list-items .wrap-info-company {
+  padding: 0 0 10px 0;
+}
+.wrap-info-company .icon-social-media {
+  margin: 12px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 18px;
+}
+.wrap-info-company .icon-social-media .icon {
+  font-size: var(--font-22);
+  color: var(--white);
+  transition: all 0.2s ease-out;
+}
+.wrap-info-company .wrap-icon:hover .icon {
+  color: rgb(255 237 161);
+}
+.list-items .footer-copyright {
+  border-top: 1px solid var(--white);
+  padding: 10px 0 0 0;
+}
+.footer-copyright .icon {
+  color: var(--white);
+  font-size: var(--font-12);
+  margin: 0 4px 0 0;
+}
+.footer-copyright .desc {
+  color: var(--white);
+  font-size: var(--font-12);
+}
+
+/*  ================================================================= RESPONSIVE ============================================================= */
+@media (max-width: 739px) {
+  .wrap-footer .footer-container {
+    width: 100%;
+    padding: 20px 12px 20px 12px;
+  }
+  // item --------------------
+  .list-items .desc a {
+    padding: 4px;
+  }
+  .list-items .wrap-info-company {
+    padding: 0;
+  }
+  .list-items .icon-social-media {
+    margin: 20px 0 12px 0;
+  }
+}
+@media (min-width: 740px) and (max-width: 991px) {
+  .wrap-footer .footer-container {
+    width: 100%;
+    padding: 24px 40px;
+  }
+}
+@media (min-width: 992px) {
+  .wrap-footer .footer-container {
+    width: 100%;
+    padding: 24px 60px;
+  }
+}

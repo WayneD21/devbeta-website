@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Image, Row, Col, Button, message, Modal, Card } from 'antd';
+import { Image, Row, Col, Button, message, Modal, Card, Typography } from 'antd';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import FooterD from '../../Components/FooterComps';
 import useStateDev from '../../utils/useStateDev';
@@ -9,6 +9,10 @@ import routes from '../../configs/routesPath';
 import '../../Styles/HomePage.scss';
 import FieldActivity from './Components/FieldActivity';
 import FeaturedProducts from './Components/FeaturedProducts';
+import FAQ from './Components/FAQ';
+
+const { Title } = Typography;
+
 const BASE_URL_FE = import.meta.env.VITE_FE_BASE;
 
 const HomePage = () => {
@@ -21,7 +25,7 @@ const HomePage = () => {
     <>
       {contextHolder}
       <div className="wrap-content-page">
-        <div className="content-nef">
+        <div className="content-nef home-page">
           {/* ================= banner ================= */}
           <div className="banner">
             <div className="hero">
@@ -42,22 +46,37 @@ const HomePage = () => {
               className="img-banner"
               fallback="Error"
               preview={false}
-              src={BASE_URL_FE + 'images/banner-primary.jpg'}
+              src={BASE_URL_FE + 'images/banner-primary.png'}
             />
           </div>
           {/* ================= content ================= */}
           {/* Field Activity --------------------------------------------- */}
           <div className="session session-first">
             {/* title ------------------ */}
-            <div className="title">Lĩnh vực hoạt động</div>
+            <Title className="title-page" level={2}>
+              Lĩnh vực hoạt động
+            </Title>
             <FieldActivity baseUrl={BASE_URL_FE} />
           </div>
 
           {/* Featured Products --------------------------------------------- */}
           <div className="session session-second">
             {/* title ------------------ */}
-            <div className="title">Sản phẩm nổi bật</div>
+            <Title className="title-page" level={2}>
+              Sản phẩm nổi bật
+            </Title>
+
             <FeaturedProducts baseUrl={BASE_URL_FE} />
+          </div>
+
+          {/* FAQ --------------------------------------------- */}
+          <div className="session session-third">
+            {/* title ------------------ */}
+            <Title className="title-page" level={2}>
+              Câu hỏi thường gặp
+            </Title>
+
+            <FAQ baseUrl={BASE_URL_FE} />
           </div>
         </div>
       </div>

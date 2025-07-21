@@ -3,7 +3,7 @@
 
 :root {
   --boxshadow-d: 0 0px 3px rgba(0, 0, 0, 0.16) !important;
-  --boxshadow-drop: 0 2px 4px 2px rgba(0, 0, 0, 0.16) !important;
+  --boxshadow-drop: 0 4px 10px rgba(0, 0, 0, 0.16) !important;
 
   /* COLOR ==============================================================================*/
   --white: rgba(255, 255, 255, 1);

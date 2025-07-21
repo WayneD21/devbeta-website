@@ -1,6 +1,8 @@
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import HomePage from '../../Pages/Home/index.jsx';
+import Recruitment from '../../Pages/Recruitment/index.jsx';
+import Rules from '../../Pages/Rules/index.jsx';
 
 // Home ----------------------------
 export const HomeRoute = () => {
@@ -61,7 +63,7 @@ export const RecruitmentRoute = () => {
       <Helmet>
         <title>{t('recruitment')}</title>
       </Helmet>
-      <HomePage />
+      <Recruitment />
     </>
   );
 };
@@ -74,7 +76,7 @@ export const RulesRoute = () => {
       <Helmet>
         <title>{t('rules')}</title>
       </Helmet>
-      <HomePage />
+      <Rules />
     </>
   );
 };

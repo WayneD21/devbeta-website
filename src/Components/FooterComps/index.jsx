@@ -30,7 +30,7 @@ function FooterD() {
       <div className="wrap-footer">
         <div className="footer-container">
           {loading ? (
-            <Card loading={true} style={{ backgroundColor: '#4b79a1', border: 'none' }} />
+            <Card loading={true} style={{ backgroundColor: 'rgb(45 45 45)', border: 'none' }} />
           ) : (
             <>
               <Row gutter={[10, 0]} justify={'space-between'} className="list-items">

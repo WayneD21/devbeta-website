@@ -1,6 +1,8 @@
-import { Card, Image } from 'antd';
+import { Card, Image, Typography } from 'antd';
 
-const FieldActivity = ({baseUrl}) => {
+const { Title } = Typography;
+
+const FieldActivity = ({ baseUrl }) => {
   return (
     <>
       <div className="field-activity">
@@ -16,7 +18,7 @@ const FieldActivity = ({baseUrl}) => {
                   src={baseUrl + 'images/field-activity-release.jpg'}
                 />
               </div>
-              <span className="title">Thiết kế, phát hành webstie - app, tool - software</span>
+              <Title level={5}>Thiết kế, phát hành webstie - app, tool - software</Title>
               <span className="desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
@@ -36,7 +38,7 @@ const FieldActivity = ({baseUrl}) => {
                   src={baseUrl + 'images/field-activity-social-ads.jpg'}
                 />
               </div>
-              <span className="title">Truyền thông, quảng cáo, sự kiện</span>
+              <Title level={5}>Truyền thông, quảng cáo, sự kiện</Title>
               <span className="desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
@@ -56,7 +58,7 @@ const FieldActivity = ({baseUrl}) => {
                   src={baseUrl + 'images/field-activity-provide.jpg'}
                 />
               </div>
-              <span className="title">Cung cấp thiết bị, linh kiện máy tính - viễn thông</span>
+              <Title level={5}>Cung cấp thiết bị, linh kiện máy tính - viễn thông</Title>
               <span className="desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.

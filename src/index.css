@@ -20,6 +20,14 @@
   overflow: auto !important;
   max-height: calc(-300px + 95vh) !important;
 } */
+/* title */
+.title-page.ant-typography {
+  display: inline-block;
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-size: var(--font-30);
+  border-bottom: 2px solid var(--text-unselected);
+}
 /* IMAGE ------------------------------------ */
 .ant-image-preview {
   backdrop-filter: blur(4px);

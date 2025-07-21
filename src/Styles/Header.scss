@@ -25,6 +25,12 @@
   margin: 0 auto;
   padding: 0;
 }
+.wrap-logo-menu {
+    display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
 .ant-menu::before {
   content: none;
 }
@@ -36,7 +42,7 @@
   transition: all 0.05s ease-out;
 }
 .wrap-logo .ant-image .ant-image-img {
-  width: 50px;
+  width: 42px;
   height: 100%;
 }
 .header-container .ant-menu .ant-menu-item .anticon + span {

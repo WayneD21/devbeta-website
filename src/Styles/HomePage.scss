@@ -1,127 +1,148 @@
-.content-home-page {
-  background: var(--white);
-  border-radius: 16px;
-}
-.content-nef {
+.content-nef.home-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 66px 0 0 0;
   .banner {
     position: relative;
     display: flex;
     justify-content: flex-end;
+    padding: 0 0 66px 0;
+    .ant-image {
+      margin: 60px 0 0 0;
+      width: 90%;
+    }
+    .hero {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      z-index: 2;
+    }
+    // .hero-text {
+    // }
+    .hero-title {
+      font-size: var(--font-50);
+    }
+    .hero-subtitle {
+      font-size: var(--font-15);
+      font-weight: 500;
+      padding-top: 20px;
+      width: 33%;
+    }
   }
-}
-.content-nef .banner {
-  .ant-image {
-    width: 86%;
-  }
-  .hero {
-    position: absolute;
-    top: 36px;
-    left: 0;
-    z-index: 2;
-  }
-  // .hero-text {
-  // }
-  .hero-title {
-    font-size: var(--font-50);
-  }
-  .hero-subtitle {
-    font-size: var(--font-15);
-    padding-top: 20px;
-    width: 33%;
-  }
-}
-// field-activity -----------------------------
-.session.session-first {
-  margin: 0 0 120px 0;
-  > .title {
-    display: inline-block;
-    padding-bottom: 6px;
-    margin-bottom: 100px;
-    font-size: var(--font-30);
-    border-bottom: 2px solid var(--text-unselected);
-  }
-  > .field-activity {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    .field-activity-list {
-      width: 30%;
-      .field-activity-item {
-        .field-activity-card.ant-card {
-          border: none;
-          box-shadow: var(--boxshadow-drop);
-          min-height: 260px;
-          .ant-card-body {
-            position: relative;
-            display: flex;
-            justify-content: flex-start;
-            flex-flow: column nowrap;
-            gap: 8px;
-            padding: 76px 20px 20px 20px;
-            .field-activity-icon {
-              position: absolute;
-              top: -60px;
-              left: 20px;
-            }
-            .title {
-              font-size: var(--font-16);
-              font-weight: 600;
-              color: var(--blue);
-            }
-            .desc {
-              font-size: var(--font-14);
-              color: var(--text-primary);
+  // field-activity -----------------------------
+  .session.session-first {
+    padding: 0 0 120px 0;
+    > .ant-typography {
+      margin-bottom: 140px;
+    }
+    > .field-activity {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .field-activity-list {
+        width: 30%;
+        .field-activity-item {
+          .field-activity-card.ant-card {
+            border: none;
+            box-shadow: var(--boxshadow-drop);
+            min-height: 290px;
+            .ant-card-body {
+              position: relative;
+              display: flex;
+              justify-content: flex-start;
+              flex-flow: column nowrap;
+              gap: 8px;
+              padding: 76px 20px 20px 20px;
+              .field-activity-icon {
+                position: absolute;
+                top: -60px;
+                left: 20px;
+              }
+              .ant-typography {
+                color: var(--blue);
+                cursor: default;
+              }
+              .desc {
+                font-size: var(--font-15);
+                color: var(--text-primary);
+              }
             }
           }
         }
       }
     }
   }
-}
-// featured-products -----------------------------
-.session.session-second {
-  margin: 0 0 120px 0;
-  > .title {
-    display: inline-block;
-    padding-bottom: 6px;
-    margin-bottom: 100px;
-    font-size: var(--font-30);
-    border-bottom: 2px solid var(--text-unselected);
-  }
-  > .featured-products {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    .featured-products-list {
-      .featured-products-item {
-        .featured-products-card.ant-card {
-          border: none;
-          box-shadow: var(--boxshadow-drop);
-          min-height: 260px;
-          .ant-card-body {
-            position: relative;
-            display: flex;
-            justify-content: flex-start;
-            flex-flow: column nowrap;
-            gap: 8px;
-            padding: 76px 20px 20px 20px;
-            .featured-products-icon {
-              position: absolute;
-              top: -60px;
-              left: 20px;
-            }
-            .title {
-              font-size: var(--font-16);
-              font-weight: 600;
-              color: var(--blue);
-            }
-            .desc {
-              font-size: var(--font-14);
-              color: var(--text-primary);
+  // featured-products -----------------------------
+  .session.session-second {
+    padding: 0 0 120px 0;
+    > .ant-typography {
+      margin-bottom: 40px;
+    }
+    > .featured-products {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      gap: 12px;
+      .featured-products-list {
+        .featured-products-item {
+          .featured-products-card.ant-card {
+            border: none;
+            .ant-card-body {
+              .featured-products-card-body {
+                position: relative;
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 56px;
+              }
+              .featured-products-icon .ant-image .ant-image-img {
+                width: 220px;
+              }
+              .wrap-text {
+                padding: 20px 0 0 0;
+                display: flex;
+                flex-flow: column nowrap;
+              }
+              .ant-typography {
+                color: var(--blue);
+                cursor: default;
+              }
+              .desc {
+                font-size: var(--font-15);
+                color: var(--text-primary);
+              }
             }
           }
         }
+      }
+    }
+  }
+
+  // FAQ -----------------------
+  .session.session-third {
+    padding: 0 0 66px 0;
+    > .ant-typography {
+      margin-bottom: 80px;
+    }
+    .faq-nef {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 0 0 0 20px;
+      .faq-list {
+        flex: 1;
+        .faq-item {
+          padding: 0 0 20px 0;
+          .ant-typography {
+            color: var(--blue);
+            cursor: default;
+          }
+          .desc {
+            font-size: var(--font-15);
+          }
+        }
+      }
+      .faq-img {
+        flex: 1;
       }
     }
   }

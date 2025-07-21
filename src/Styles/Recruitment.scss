@@ -1,0 +1,51 @@
+.content-nef.recruitment {
+  padding: 40px 0 0 0;
+  .recruitment-job-card.ant-card {
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--boxshadow-drop);
+    .recruitment-job-body {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      gap: 60px;
+      .recruitment-job-icon {
+      }
+      .lists {
+        .item {
+          padding-bottom: 10px;
+          .icon {
+            width: 20px;
+          }
+          .desc {
+            margin: 0 0 0 6px;
+          }
+        }
+      }
+      .time-update {
+      }
+    }
+  }
+}
+.form-item-input .ant-input-affix-wrapper {
+border-radius: 10px;
+}
+.form-item-select .ant-select-single .ant-select-selector {
+    border-radius: 10px;
+}
+.btn-search {
+  padding: 4px 16px;
+  color: var(--white);
+  background: var(--blue);
+  border: solid 1px var(--blue);
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+  border-radius: 10px;
+  height: 34px;
+}
+.btn-search.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
+  border: solid 1px var(--blue);
+  color: var(--blue);
+  background: white;
+  opacity: 0.9;
+}

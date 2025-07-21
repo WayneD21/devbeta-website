@@ -100,19 +100,32 @@ const HeaderCustom = () => {
   return (
     <div className="header-container">
       <Header className="header-layout">
-        {/* Logo --------------------------------- */}
-        <Link className="wrap-logo" to={'/'}>
-          <Image preview={false} src={BASE_URL_FE + 'images/logo-devbeta.svg'} alt="Image" />
-        </Link>
-        {/* Navigation Menu --------------------------------- */}
-        <Menu
-          className="menu-head-container"
-          theme="light"
-          mode="horizontal"
-          selectedKeys={[navSelectKey]}
-          onClick={({ key }) => handleMenuClick(key)}
-          items={navMenuItems}
-        />
+        <div className='wrap-logo-menu'>
+          {/* Logo --------------------------------- */}
+          <Link className="wrap-logo" to={'/'}>
+            <Image preview={false} src={BASE_URL_FE + 'images/logo-devbeta.svg'} alt="Image" />
+          </Link>
+          {/* Navigation Menu --------------------------------- */}
+          <Menu
+            className="menu-head-container"
+            theme="light"
+            mode="horizontal"
+            selectedKeys={[navSelectKey]}
+            onClick={({ key }) => handleMenuClick(key)}
+            items={navMenuItems}
+          />
+        </div>
+        {/* select language --------------------------------- */}
+        <div className=''>
+          <Select
+            className="wrap-language me-20"
+            style={{ width: '42px', height: '34px' }}
+            value={language}
+            onChange={changeLanguage}
+            options={optionsLanguage}
+            suffixIcon={null}
+          />
+        </div>
       </Header>
     </div>
   );

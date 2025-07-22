@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Layout, Image, Menu, Select, Dropdown, Avatar } from 'antd';
+import { Layout, Image, Menu, Select} from 'antd';
+import { getNavMenuItems } from '../Components/menu-item/NavMenuItems';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +11,6 @@ import routes from '../configs/routesPath';
 import { logoutApp } from '../utils/auth';
 import { getSid } from '../utils/auth';
 import '../Styles/Header.scss';
-import { getNavMenuItems } from '../Components/menu-item/NavMenuItems';
 
 const BASE_URL_FE = import.meta.env.VITE_FE_BASE;
 
@@ -116,9 +116,9 @@ const HeaderCustom = () => {
           />
         </div>
         {/* select language --------------------------------- */}
-        <div className=''>
+        <div className='wrap-language'>
           <Select
-            className="wrap-language me-20"
+            className="select-language me-20"
             style={{ width: '42px', height: '34px' }}
             value={language}
             onChange={changeLanguage}

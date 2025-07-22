@@ -109,7 +109,7 @@ const LoginPage = () => {
           <div className="login-form-nef">
             <Spin spinning={loading}>
               <LoginForm
-                logo={BASE_URL_FE + 'images/logo_viewrp_cobg.png'}
+                logo={BASE_URL_FE + 'images/logo-devbeta.svg'}
                 onFinish={handleSubmit}
                 submitter={
                   loginType === LoginType.SIGNIN

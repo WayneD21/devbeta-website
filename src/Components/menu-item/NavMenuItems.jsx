@@ -40,7 +40,7 @@ export const getNavMenuItems = (t) => [
     className: 'fw-500',
   },
   {
-    key: routes.fqa,
+    key: routes.faq,
     label: (
       <>
         <span className="icon-header">

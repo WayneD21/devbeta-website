@@ -6,8 +6,8 @@ import routes from '../configs/routesPath.js';
 import {
   HomeRoute,
   ProductRoute,
-  FfieldActivityRoute,
-  FAQ,
+  FieldActivityRoute,
+  FAQRouter,
   RecruitmentRoute,
   RulesRoute,
 } from './Components/RouteComponents.jsx';
@@ -20,8 +20,8 @@ export const appRoutes = createBrowserRouter(
       <Route path={routes.base_url} element={<MainLayout />}>
         <Route path={routes.home} element={<HomeRoute />} />
         <Route path={routes.product} element={<ProductRoute />} />
-        <Route path={routes.fieldActivity} element={<FfieldActivityRoute />} />
-        <Route path={routes.faq} element={<FAQ />} />
+        <Route path={routes.fieldActivity} element={<FieldActivityRoute />} />
+        <Route path={routes.faq} element={<FAQRouter />} />
         <Route path={routes.recruitment} element={<RecruitmentRoute />} />
         <Route path={routes.rules} element={<RulesRoute />} />
       </Route>

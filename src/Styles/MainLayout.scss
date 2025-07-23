@@ -3,14 +3,16 @@
 }
 .wrap-main-layout {
   width: 100%;
-  // height: 100%;
+  height: 100%;
   background: var(--background-main);
 }
-.main-layout {
+.layout-nef {
   position: relative;
-  width: 1300px;
   height: 100%;
   background: var(--background-main);
   min-height: 100vh;
-  margin: 0 auto;
+}
+.main-layout {
+  width: 1300px;
+  margin: 64px auto;
 }

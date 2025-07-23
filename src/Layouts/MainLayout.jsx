@@ -25,9 +25,9 @@ const MainLayout = () => {
     islog && (
       <>
         <div className="wrap-main-layout">
-          <Layout className="main-layout">
+          <Layout className='layout-nef'>
             <HeaderCustom />
-            <main>
+            <main className="main-layout">
               <Outlet />
             </main>
             {/* footer ---------------------------------------------- */}

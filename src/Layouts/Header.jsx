@@ -119,7 +119,7 @@ const HeaderCustom = () => {
         <div className='wrap-language'>
           <Select
             className="select-language me-20"
-            style={{ width: '42px', height: '34px' }}
+            style={{ width: '46px', height: '34px' }}
             value={language}
             onChange={changeLanguage}
             options={optionsLanguage}

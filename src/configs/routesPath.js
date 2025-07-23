@@ -5,6 +5,8 @@ const routes = {
   home: '',
   product: 'product',
   recruitment: 'recruitment',
+  fieldActivity: 'field-activity',
+  faq: 'faq',
   rules: 'rules',
   login: 'login',
   register: 'register',

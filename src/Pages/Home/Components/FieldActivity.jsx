@@ -6,60 +6,56 @@ const FieldActivity = ({ baseUrl }) => {
   return (
     <>
       <div className="field-activity">
-        <div className="field-activity-list">
-          {/*  */}
-          <div className="field-activity-item">
-            <Card className="field-activity-card">
-              <div className="field-activity-icon">
+        <div className="field-activity__list">
+          {/* ------------------------------------- */}
+          <div className="field-activity__item">
+            <Card className="field-activity__card">
+              <div className="field-activity__icon">
                 <Image
-                  className=""
+                  className="field-activity__img"
                   fallback="Error"
                   preview={false}
-                  src={baseUrl + 'images/field-activity-release.jpg'}
+                  src={baseUrl + 'images/field-activity-release.png'}
                 />
               </div>
               <Title level={5}>Thiết kế, phát hành webstie - app, tool - software</Title>
-              <span className="desc">
+              <span className="field-activity__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
               </span>
             </Card>
           </div>
-        </div>
-        <div className="field-activity-list">
-          {/*  */}
-          <div className="field-activity-item">
-            <Card className="field-activity-card">
-              <div className="field-activity-icon">
+          {/* ------------------------------------- */}
+          <div className="field-activity__item">
+            <Card className="field-activity__card">
+              <div className="field-activity__icon">
                 <Image
-                  className=""
+                  className="field-activity__img"
                   fallback="Error"
                   preview={false}
-                  src={baseUrl + 'images/field-activity-social-ads.jpg'}
+                  src={baseUrl + 'images/field-activity-social-ads.png'}
                 />
               </div>
               <Title level={5}>Truyền thông, quảng cáo, sự kiện</Title>
-              <span className="desc">
+              <span className="field-activity__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
               </span>
             </Card>
           </div>
-        </div>
-        <div className="field-activity-list">
-          {/*  */}
-          <div className="field-activity-item">
-            <Card className="field-activity-card">
-              <div className="field-activity-icon">
+          {/* ------------------------------------- */}
+          <div className="field-activity__item">
+            <Card className="field-activity__card">
+              <div className="field-activity__icon">
                 <Image
-                  className=""
+                  className="field-activity__img"
                   fallback="Error"
                   preview={false}
-                  src={baseUrl + 'images/field-activity-provide.jpg'}
+                  src={baseUrl + 'images/field-activity-provide.png'}
                 />
               </div>
               <Title level={5}>Cung cấp thiết bị, linh kiện máy tính - viễn thông</Title>
-              <span className="desc">
+              <span className="field-activity__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                 fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
               </span>

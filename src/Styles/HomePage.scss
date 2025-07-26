@@ -1,150 +1,207 @@
-.content-nef.home-page {
+@use 'mixins';
+
+// .layout {
+//   &__content {
+//   }
+// }
+.home {
   min-height: 100vh;
   min-height: 100dvh;
   padding: 66px 0 0 0;
-  .banner {
+  &__banner {
     position: relative;
     display: flex;
     justify-content: flex-end;
     padding: 0 0 66px 0;
-    .ant-image {
-      margin: 60px 0 0 0;
-      width: 90%;
-    }
-    .hero {
+    .banner__hero {
       position: absolute;
       top: 36px;
       left: 0;
       z-index: 2;
     }
-    // .hero-text {
+    // .banner__text {
     // }
-    .hero-title {
+    .banner__title {
       font-size: var(--font-50);
+      cursor: default;
     }
-    .hero-subtitle {
+    .banner__subtitle {
       font-size: var(--font-15);
       font-weight: 500;
       padding-top: 20px;
       width: 33%;
     }
-  }
-  // field-activity -----------------------------
-  .session.session-first {
-    padding: 0 0 120px 0;
-    > .ant-typography {
-      margin-bottom: 140px;
+    .banner__img {
+      margin: 60px 0 0 0;
     }
-    > .field-activity {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-      .field-activity-list {
-        width: 30%;
-        .field-activity-item {
-          .field-activity-card.ant-card {
-            border: none;
-            box-shadow: var(--boxshadow-drop);
-            min-height: 290px;
-            .ant-card-body {
-              position: relative;
-              display: flex;
-              justify-content: flex-start;
-              flex-flow: column nowrap;
-              gap: 8px;
-              padding: 76px 20px 20px 20px;
-              .field-activity-icon {
-                position: absolute;
-                top: -60px;
-                left: 20px;
-              }
-              .ant-typography {
-                color: var(--blue);
-                cursor: default;
-              }
-              .desc {
-                font-size: var(--font-15);
-                color: var(--text-primary);
-              }
-            }
-          }
-        }
+  }
+  @include mixins.respond(xs) {
+    padding: 10px;
+    &__banner {
+      padding: 0 0 36px 0;
+    }
+    .banner__title {
+      font-size: var(--font-32);
+    }
+    .banner__subtitle {
+      padding-top: 12px;
+      width: 90%;
+    }
+    .banner__img {
+      margin: 186px 0 0 0;
+    }
+  }
+}
+.section {
+  &__title {
+    padding: 0 0 8px 0;
+    display: inline-block;
+    border-bottom: 2px solid var(--blue-ice);
+    cursor: default;
+  }
+  &--activity {
+    padding: 0 0 120px 0;
+    .section__title {
+      margin-bottom: 120px;
+    }
+  }
+  &--products {
+    padding: 0 0 20px 0;
+    .section__title {
+      margin-bottom: 60px;
+    }
+  }
+  &--fqa {
+    padding: 0 0 20px 0;
+    .section__title {
+      margin-bottom: 60px;
+    }
+  }
+  @include mixins.respond(xs) {
+    &--activity {
+      padding: 0 0 60px 0;
+      .section__title {
+        margin-bottom: 80px;
       }
     }
   }
-  // featured-products -----------------------------
-  .session.session-second {
-    padding: 0 0 120px 0;
-    > .ant-typography {
-      margin-bottom: 40px;
-    }
-    > .featured-products {
+}
+// field-activity -----------------------------
+.field-activity {
+  &__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    width: 30%;
+  }
+  &__card {
+    border: none;
+    box-shadow: var(--boxshadow-drop);
+    min-height: 290px;
+    border-radius: 16px;
+    .ant-card-body {
+      position: relative;
       display: flex;
+      justify-content: flex-start;
       flex-flow: column nowrap;
-      justify-content: space-between;
-      gap: 12px;
-      .featured-products-list {
-        .featured-products-item {
-          .featured-products-card.ant-card {
-            border: none;
-            .ant-card-body {
-              .featured-products-card-body {
-                position: relative;
-                display: flex;
-                flex-flow: row nowrap;
-                gap: 56px;
-              }
-              .featured-products-icon .ant-image .ant-image-img {
-                width: 220px;
-              }
-              .wrap-text {
-                padding: 20px 0 0 0;
-                display: flex;
-                flex-flow: column nowrap;
-              }
-              .ant-typography {
-                color: var(--blue);
-                cursor: default;
-              }
-              .desc {
-                font-size: var(--font-15);
-                color: var(--text-primary);
-              }
-            }
-          }
-        }
-      }
+      gap: 4px;
+      padding: 76px 20px 20px 20px;
+    }
+    .ant-typography {
+      color: var(--blue);
+      cursor: default;
     }
   }
-
-  // FAQ -----------------------
-  .session.session-third {
-    padding: 0 0 66px 0;
-    > .ant-typography {
-      margin-bottom: 80px;
+  &__icon {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+  }
+  &__desc {
+    font-size: var(--font-15);
+    color: var(--text-primary);
+  }
+  @include mixins.respond(xs) {
+    &__list {
+      flex-flow: column nowrap;
+      gap: 70px;
     }
-    .faq-nef {
+    &__item {
+      width: 90%;
+    }
+    &__card {
+      .ant-card-body {
+        padding: 60px 20px 20px;
+      }
+    }
+    &__icon {
+      top: -45px;
+    }
+    .field-activity__img {
+      width: 90px;
+    }
+  }
+}
+// featured-products -----------------------------
+.featured-products {
+  &__list {
+  }
+  &__item {
+    margin: 0 0 60px 0;
+  }
+  &__card {
+    border: none;
+    .ant-card-body {
+      padding: 0;
+    }
+    .featured-products__body {
+      position: relative;
       display: flex;
       flex-flow: row nowrap;
-      padding: 0 0 0 20px;
-      .faq-list {
-        flex: 1;
-        .faq-item {
-          padding: 0 0 20px 0;
-          .ant-typography {
-            color: var(--blue);
-            cursor: default;
-          }
-          .desc {
-            font-size: var(--font-15);
-          }
-        }
-      }
-      .faq-img {
-        flex: 1;
-      }
+      gap: 56px;
     }
+    .ant-typography {
+      color: var(--blue);
+      cursor: default;
+    }
+  }
+  // &__icon {
+  // }
+  &__img.ant-image-img {
+    width: 220px;
+  }
+  &__desc {
+    font-size: var(--font-15);
+    color: var(--text-primary);
+  }
+}
+
+// FAQ -----------------------
+.faq {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0 0 0 20px;
+  &__list {
+    flex: 1;
+  }
+  &__item {
+    padding: 0 0 20px 0;
+    .ant-typography {
+      color: var(--blue);
+      cursor: default;
+      font-weight: 500;
+    }
+  }
+  &__desc {
+    font-size: var(--font-15);
+  }
+  .wrap-faq__img {
+    flex: 1;
+    // .faq__img {
+    // }
   }
 }
 
@@ -155,9 +212,6 @@
 @media (min-width: 376px) and (max-width: 399px) {
 }
 @media (min-width: 400px) and (max-width: 639px) {
-  .content-in-banner .banner-content {
-    width: 94%;
-  }
 }
 @media (max-width: 739px) {
 }

@@ -1,15 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { Image, Row, Col, Button, message, Modal, Card, Typography } from 'antd';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import FooterD from '../../Components/FooterComps';
+import { Image, message, Typography } from 'antd';
 import useStateDev from '../../utils/useStateDev';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import routes from '../../configs/routesPath';
-import '../../Styles/HomePage.scss';
 import FieldActivity from './Components/FieldActivity';
 import FeaturedProducts from './Components/FeaturedProducts';
 import FAQ from './Components/FAQ';
+import '../../Styles/HomePage.scss';
 
 const { Title } = Typography;
 
@@ -24,55 +20,55 @@ const HomePage = () => {
   return (
     <>
       {contextHolder}
-      <div className="wrap-content-page">
-        <div className="content-nef home-page">
+      <div className="layout">
+        <div className="layout__content home">
           {/* ================= banner ================= */}
-          <div className="banner">
-            <div className="hero">
-              <div className="hero-text">
-                <h1 className="hero-title">
+          <div className="home__banner">
+            <div className="banner__hero">
+              <div className="banner__text">
+                <h1 className="banner__title">
                   <div>
                     UY TÍN, <span style={{ color: 'var(--blue)' }}>CHẤT LƯỢNG,</span>
                   </div>
                   <span>BẮT KỊP XU THẾ</span>
                 </h1>
-                <p className="hero-subtitle">
+                <p className="banner__subtitle">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                   fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
                 </p>
               </div>
             </div>
             <Image
-              className="img-banner"
+              className="banner__img"
               fallback="Error"
               preview={false}
               src={BASE_URL_FE + 'images/banner-primary.png'}
             />
           </div>
+
           {/* ================= content ================= */}
           {/* Field Activity --------------------------------------------- */}
-          <div className="session session-first">
+          <div className="section section--activity">
             {/* title ------------------ */}
-            <Title className="title-page" level={2}>
+            <Title className="section__title" level={2}>
               Lĩnh vực hoạt động
             </Title>
             <FieldActivity baseUrl={BASE_URL_FE} />
           </div>
 
           {/* Featured Products --------------------------------------------- */}
-          <div className="session session-second">
+          <div className="section section--products">
             {/* title ------------------ */}
-            <Title className="title-page" level={2}>
+            <Title className="section__title" level={2}>
               Sản phẩm nổi bật
             </Title>
-
             <FeaturedProducts baseUrl={BASE_URL_FE} />
           </div>
 
           {/* FAQ --------------------------------------------- */}
-          <div className="session session-third">
+          <div className="section section--fqa">
             {/* title ------------------ */}
-            <Title className="title-page" level={2}>
+            <Title className="section__title" level={2}>
               Câu hỏi thường gặp
             </Title>
 

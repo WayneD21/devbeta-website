@@ -120,7 +120,10 @@
 .select-language.ant-select-single .ant-select-selector {
   border-radius: 12px;
   padding: 0 4px;
-  border: 1px solid var(--blue);
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid var(--blue);
+  border-left: none;
 }
 .select-language.ant-select-focused:where(.css-dev-only-do-not-override-iage8v).ant-select-outlined:not(
     .ant-select-disabled
@@ -132,7 +135,10 @@
     .ant-pagination-size-changer
   ):hover
   .ant-select-selector {
-  border: 1px solid var(--blue);
+    border-top: none;
+  border-right: none;
+  border-bottom: 1px solid var(--violet);
+  border-left: none;
 }
 // avatar ------------------------------------
 .header-account-avt {

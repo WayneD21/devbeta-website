@@ -26,7 +26,7 @@
       cursor: default;
     }
     .banner__subtitle {
-      font-size: var(--font-15);
+      font-size: var(--font-16);
       font-weight: 500;
       padding-top: 20px;
       width: 33%;
@@ -36,7 +36,7 @@
     }
   }
   @include mixins.respond(xs) {
-    padding: 10px;
+    padding: 10px 16px;
     &__banner {
       padding: 0 0 36px 0;
     }
@@ -66,23 +66,29 @@
     }
   }
   &--products {
-    padding: 0 0 20px 0;
+    padding: 0 0 60px 0;
     .section__title {
-      margin-bottom: 60px;
+      margin-bottom: 46px;
     }
   }
   &--fqa {
     padding: 0 0 20px 0;
     .section__title {
-      margin-bottom: 60px;
+      margin-bottom: 36px;
     }
   }
   @include mixins.respond(xs) {
+    &__title {
+      padding: 0 0 4px 0;
+    }
     &--activity {
       padding: 0 0 60px 0;
       .section__title {
         margin-bottom: 80px;
       }
+    }
+    &--products {
+      padding: 0;
     }
   }
 }
@@ -177,13 +183,27 @@
     font-size: var(--font-15);
     color: var(--text-primary);
   }
+  @include mixins.respond(xs) {
+    .featured-products__body {
+      gap: 10px;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: 0 8px;
+    }
+    &__item {
+      margin: 0 0 40px 0;
+    }
+    &__img.ant-image-img {
+      width: 200px;
+    }
+  }
 }
 
 // FAQ -----------------------
 .faq {
   display: flex;
   flex-flow: row nowrap;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 8px;
   &__list {
     flex: 1;
   }
@@ -203,35 +223,7 @@
     // .faq__img {
     // }
   }
-}
-
-// ============================================= RESPONSIVE =============================================
-// MOBILE ------------------------------------
-@media (max-width: 375px) {
-}
-@media (min-width: 376px) and (max-width: 399px) {
-}
-@media (min-width: 400px) and (max-width: 639px) {
-}
-@media (max-width: 739px) {
-}
-// TABLET ------------------------------------
-@media (min-width: 740px) {
-}
-@media (min-width: 740px) and (max-width: 820px) {
-}
-@media (max-width: 821px) {
-}
-@media (min-width: 821px) and (max-width: 1023px) {
-}
-@media (min-width: 640px) and (max-width: 992px) {
-}
-@media (min-width: 740px) and (max-width: 992px) {
-}
-@media (max-width: 1024px) {
-}
-
-@media (min-width: 740px) and (max-width: 1023px) {
-}
-@media (min-width: 1024px) and (max-width: 1300px) {
+  @include mixins.respond(xs) {
+    flex-flow: column nowrap;
+  }
 }

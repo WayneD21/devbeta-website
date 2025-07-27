@@ -20,7 +20,7 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
-                  <Title level={2}>ViewRP</Title>
+                  <Title level={4}>ViewRP</Title>
                   <span className="featured-products__desc">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                     fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
@@ -43,7 +43,7 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
-                  <Title level={2}>Box Proxy</Title>
+                  <Title level={4}>Box Proxy</Title>
                   <span className="featured-products__desc">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                     fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
@@ -65,7 +65,7 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
-                  <Title level={2}>Dịch vụ thiết kế website</Title>
+                  <Title level={4}>Dịch vụ thiết kế website</Title>
                   <span className="featured-products__desc">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
                     fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.

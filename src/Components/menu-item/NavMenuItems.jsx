@@ -8,7 +8,7 @@ export const getNavMenuItems = (t) => [
     label: (
       <>
         <span className="icon-header">
-          {/* <FontAwesomeIcon icon={faHome} /> */}
+          <FontAwesomeIcon icon={faHome} />
         </span>
         <span className="text-header">{t('home')}</span>
       </>

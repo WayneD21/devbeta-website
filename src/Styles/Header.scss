@@ -1,4 +1,5 @@
-@use 'mixins';
+@use 'breakpoints';
+@use 'respond';
 
 .header {
   position: fixed;
@@ -10,7 +11,6 @@
     justify-content: space-between;
     align-items: center;
     background: var(--white);
-    border-bottom: 1px solid var(--charcoal);
     width: 1300px;
     margin: 0 auto;
     padding: 0;
@@ -41,7 +41,13 @@
       border: 1px solid var(--blue-ice);
     }
   }
-  @include mixins.respond(xs) {
+  @include respond.respond(xls, down) {
+    &__layout {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+  @include respond.respond-between(0px, 1023px) {
     &__left {
       flex-direction: row-reverse;
     }
@@ -49,7 +55,6 @@
   .head__menu {
     justify-content: center;
     align-items: center;
-    // flex: 1 1 0%;
     border: none;
     transition: all 0.05s ease-out;
     .ant-menu::before {
@@ -76,6 +81,12 @@
     &.ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover {
       color: var(--blue);
     }
+    &.ant-menu-item >.ant-menu-title-content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 8px;
+    }
     &.ant-menu .ant-menu-item .anticon {
       font-size: var(--font-20);
       display: none;
@@ -98,7 +109,6 @@
   display: flex;
   align-items: center;
   &__select {
-    margin: 0 20px 0 0;
     width: 46px;
     height: 34px;
     &.ant-select-single .ant-select-selector {

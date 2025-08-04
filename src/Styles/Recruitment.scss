@@ -1,37 +1,52 @@
-.content-nef.recruitment {
+.recruitment {
   padding: 40px 0 0 0;
-  .recruitment-job-card.ant-card {
+  &__form-filter {
+    padding: 10px 0 26px 0;
+  }
+  .wrap-job-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+  }
+  &__job-card.ant-card {
     border-radius: 15px;
-    margin-bottom: 20px;
     box-shadow: var(--boxshadow-drop);
-    .recruitment-job-body {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      gap: 60px;
-      .recruitment-job-icon {
-      }
-      .lists {
-        .item {
-          padding-bottom: 10px;
-          .icon {
-            width: 20px;
-          }
-          .desc {
-            margin: 0 0 0 6px;
-          }
-        }
-      }
-      .time-update {
-      }
-    }
+  }
+  &__job-body {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 114px;
+  }
+  &__job-img {
+  }
+  &__job-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+  &__job-item {
+    padding-bottom: 6px;
+    font-size: var(--font-15);
+  }
+  &__job-icon {
+    width: 20px;
+    color: var(--blue);
+    font-size: var(--font-18);
+  }
+  &__job-desc {
+    margin: 0 0 0 6px;
+  }
+  &__job-time-update {
   }
 }
 .form-item-input .ant-input-affix-wrapper {
-border-radius: 10px;
+  border-radius: 10px;
 }
 .form-item-select .ant-select-single .ant-select-selector {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 .btn-search {
   padding: 4px 16px;

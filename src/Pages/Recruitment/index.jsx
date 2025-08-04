@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Card, Col, Form, Image, Input, Row, Select, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,25 +12,63 @@ const Recruitment = () => {
   const [formRecruitment] = Form.useForm();
   const { t } = useTranslation(); // Language
 
+  const jobInfo = {
+    data: [
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+    ],
+  };
+  const datas = jobInfo?.data;
+
   return (
     <>
-      <div className="wrap-content-page">
-        <div className="content-nef recruitment">
+      <div className="layout">
+        <div className="layout__content recruitment">
           {/* ================= content ================= */}
           {/* Field Activity --------------------------------------------- */}
           <div className="session">
             {/* title ------------------ */}
-            <Title className="title-page" level={2}>
+            <Title className="section__title" level={2}>
               Tuyển dụng
             </Title>
-            <Form form={formRecruitment} className='pt-10 pb-16' layout="vertical" autoComplete="off">
+            <Form form={formRecruitment} className="recruitment__form-filter" layout="vertical" autoComplete="off">
               <Row gutter={[20, 12]} className="">
                 {/* job position, job title ---------------------------------------------- */}
                 <Col span={4}>
                   <Form.Item
                     label={<div className="label-primary">Vị trí, chức danh..</div>}
                     colon={false}
-                    name="order_code"
+                    name="position"
                     className="form-item-input mb-0"
                   >
                     <div>
@@ -52,7 +89,7 @@ const Recruitment = () => {
                   <Form.Item
                     label={<div className="label-primary">Thu nhập</div>}
                     colon={false}
-                    name="server_id"
+                    name="income"
                     className="form-item-select mb-0"
                     initialValue="" // mặc định là tất cả
                   >
@@ -75,7 +112,7 @@ const Recruitment = () => {
                   <Form.Item
                     label={<div className="label-primary">Địa điểm</div>}
                     colon={false}
-                    name="server_id"
+                    name="location"
                     className="form-item-select mb-0"
                     initialValue="" // mặc định là tất cả
                   >
@@ -95,7 +132,7 @@ const Recruitment = () => {
                 </Col>
                 <Col className="d-flex align-items-end">
                   <Button
-                    keyButton={'edit_add_item'}
+                    keyButton={'search'}
                     // onClick={() => {
                     //   setOpenModal({ view_order_code: true });
                     // }}
@@ -107,94 +144,41 @@ const Recruitment = () => {
               </Row>
             </Form>
             {/* card content ---------------------------------------- */}
-            <Card className="recruitment-job-card">
-              <div className='recruitment-job-body'>
-                <Image
-                  className="recruitment-job-icon"
-                  preview={false}
-                  src={BASE_URL_FE + 'images/recruitment-icon.png'}
-                />
-                <div className="lists">
-                  <Title level={5}>Lập trình viên thực tập</Title>
-                  <div className="item ps-4">Công ty cổ phần DevBeta</div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faLocationDot} />
-                    <span className='desc'>Ngòi A, Văn Yên, Yên Bái</span>
+            <div className="wrap-job-card">
+              {datas?.map((item, index) => (
+                <Card key={index} className="recruitment__job-card">
+                  <div className="recruitment__job-body">
+                    <div className="recruitment__job-info">
+                      <Image
+                        className="recruitment__job-img"
+                        preview={false}
+                        src={BASE_URL_FE + 'images/recruitment-icon.png'}
+                      />
+                      <div>
+                        <Title level={4}>{item.title}</Title>
+                        <div className="recruitment__job-item ps-4">{item.company}</div>
+                        <div className="recruitment__job-item">
+                          <FontAwesomeIcon className="recruitment__job-icon" icon={faLocationDot} />
+                          <span className="recruitment__job-desc">{item.address}</span>
+                        </div>
+                        <div className="recruitment__job-item">
+                          <FontAwesomeIcon className="recruitment__job-icon" icon={faBriefcase} />
+                          <span className="recruitment__job-desc">{item.workingTime}</span>
+                        </div>
+                        <div className="recruitment__job-item">
+                          <FontAwesomeIcon className="recruitment__job-icon" icon={faWallet} />
+                          <span className="recruitment__job-desc">{item.salary}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="recruitment__job-time-update">
+                      <FontAwesomeIcon className="recruitment__job-icon" icon={faClock} />
+                      <span className="ps-10">{item.updateTime}</span>
+                    </div>
                   </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faBriefcase} />
-                    <span className='desc'>Full-time</span>
-                  </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faWallet} />
-                    <span className='desc'>Thỏa thuận</span>
-                  </div>
-                </div>
-                <div className="time-update">
-                  <FontAwesomeIcon className='icon' icon={faClock} />
-                  <span className='ps-10'>1 tuần trước</span>
-                </div>
-              </div>
-            </Card>
-            <Card className="recruitment-job-card">
-              <div className='recruitment-job-body'>
-                <Image
-                  className="recruitment-job-icon"
-                  preview={false}
-                  src={BASE_URL_FE + 'images/recruitment-icon.png'}
-                />
-                <div className="lists">
-                  <Title level={5}>Lập trình viên thực tập</Title>
-                  <div className="item ps-4">Công ty cổ phần DevBeta</div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faLocationDot} />
-                    <span className='desc'>Ngòi A, Văn Yên, Yên Bái</span>
-                  </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faBriefcase} />
-                    <span className='desc'>Full-time</span>
-                  </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faWallet} />
-                    <span className='desc'>Thỏa thuận</span>
-                  </div>
-                </div>
-                <div className="time-update">
-                  <FontAwesomeIcon className='icon' icon={faClock} />
-                  <span className='ps-10'>1 tuần trước</span>
-                </div>
-              </div>
-            </Card>
-            <Card className="recruitment-job-card">
-              <div className='recruitment-job-body'>
-                <Image
-                  className="recruitment-job-icon"
-                  preview={false}
-                  src={BASE_URL_FE + 'images/recruitment-icon.png'}
-                />
-                <div className="lists">
-                  <Title level={5}>Lập trình viên thực tập</Title>
-                  <div className="item ps-4">Công ty cổ phần DevBeta</div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faLocationDot} />
-                    <span className='desc'>Ngòi A, Văn Yên, Yên Bái</span>
-                  </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faBriefcase} />
-                    <span className='desc'>Full-time</span>
-                  </div>
-                  <div className="item">
-                    <FontAwesomeIcon className='icon' icon={faWallet} />
-                    <span className='desc'>Thỏa thuận</span>
-                  </div>
-                </div>
-                <div className="time-update">
-                  <FontAwesomeIcon className='icon' icon={faClock} />
-                  <span className='ps-10'>1 tuần trước</span>
-                </div>
-              </div>
-            </Card>
-
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

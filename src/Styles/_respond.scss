@@ -1,0 +1,32 @@
+@use 'breakpoints' as bp;
+
+@mixin respond($key, $type: up) {
+  @if not map-has-key(bp.$breakpoints, $key) {
+    @error "breakpoint `#{$key}` not found";
+  }
+
+  $min: map-get(bp.$breakpoints, $key);
+  $max: map-get(bp.$breakpoints-down, $key);
+
+  @if $type == up {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $type == down {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else if $type == only {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @error "type is `up`, `down` or `only`.";
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

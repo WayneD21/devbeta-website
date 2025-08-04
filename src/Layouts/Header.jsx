@@ -8,6 +8,7 @@ import useInfoWebStore from '../store/infoWeb';
 import routes from '../configs/routesPath';
 import { logoutApp } from '../utils/auth';
 import { getSid } from '../utils/auth';
+
 import '../Styles/Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -35,14 +36,10 @@ const HeaderCustom = () => {
   }, [i18n.language]);
 
   useEffect(() => {
-    fetchInfoWeb();
-  }, []);
-
-  useEffect(() => {
     if (getSid()) {
-      fetchProfile();
+      fetchInfoWeb();
     }
-  }, [fetchProfile]);
+  }, [fetchInfoWeb]);
 
   const languageFiles = [
     { value: 'vi', flag: BASE_URL_FE + 'images/vnflag.png' },
@@ -68,6 +65,7 @@ const HeaderCustom = () => {
   const handleMenuClick = (key) => {
     setNavSelectKey(key);
     navigate(key);
+    setOpenDrawer(false);
   };
 
   const navMenuItems = getNavMenuItems(t);
@@ -125,6 +123,7 @@ const HeaderCustom = () => {
               }}
               maskClosable={true}
               open={openDrawer}
+              placement="left"
             >
               <Menu
                 className="head__menu"

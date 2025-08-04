@@ -1,0 +1,26 @@
+$breakpoints: (
+  xs: 0,
+  // Extra-small – smartphone
+  sm: 576px,
+  // Small – smartphone lớn
+  md: 768px,
+  // Medium – tablet dọc
+  lg: 992px,
+  // Large – tablet ngang / laptop nhỏ
+  xl: 1200px,
+  // header & page 1300px
+  xls: 1300px,
+  // Extra-large – laptop 15"
+  xxl: 1600px // 2XL – màn hình 2K+,,,
+);
+
+// “đến” (xpx)
+$breakpoints-down: (
+  xs: 575.98px,
+  sm: 767.98px,
+  md: 991.98px,
+  lg: 1199.98px,
+  lgs: 1023.98px,
+  xls: 1299.98px,
+  xl: 1599.98px,
+);

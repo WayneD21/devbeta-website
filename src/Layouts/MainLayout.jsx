@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import routes from '../configs/routesPath';
 import { getSid } from '../utils/auth';
+import FooterD from '../Components/FooterComps';
 import HeaderCustom from './Header';
 import '../Styles/MainLayout.scss';
 import { Layout } from 'antd';
-import FooterD from '../Components/FooterComps';
 
 const MainLayout = () => {
   const [islog, setIsLog] = useState(false);
@@ -25,7 +25,7 @@ const MainLayout = () => {
     islog && (
       <>
         <div className="wrap-main-layout">
-          <Layout className='layout-nef'>
+          <Layout className="layout-nef">
             <HeaderCustom />
             <main className="main-layout">
               <Outlet />

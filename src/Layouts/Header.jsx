@@ -117,6 +117,7 @@ const HeaderCustom = () => {
           {/* Navigation Menu --------------------------------- */}
           {menuMode === 'inline' ? (
             <Drawer
+              className="drawer-nef"
               closable={false}
               onClose={() => {
                 setOpenDrawer(false);
@@ -125,6 +126,17 @@ const HeaderCustom = () => {
               open={openDrawer}
               placement="left"
             >
+              <div className="header__logo-wrap">
+                <Link className="header__logo-drawer" to={'/'}>
+                  <Image
+                    className="header__img-drawer"
+                    preview={false}
+                    src={BASE_URL_FE + 'images/logo-devbeta.svg'}
+                    alt="Image"
+                  />
+                  <span className='header__logo-text'>DEV BETA</span>
+                </Link>
+              </div>
               <Menu
                 className="head__menu"
                 theme="light"

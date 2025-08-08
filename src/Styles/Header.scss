@@ -23,10 +23,28 @@
     gap: 30px;
   }
   &__logo-link {
-    .header__img {
-      width: 42px;
-      height: 100%;
-    }
+  }
+  &__img.ant-image-img {
+    width: 42px;
+  }
+  &__logo-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 26px 0;
+  }
+  &__logo-drawer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  &__logo-text {
+    font-weight: 700;
+    font-size: var(--font-24);
+    color: var(--blue);
+  }
+  &__img-drawer.ant-image-img {
+    width: 68px;
   }
   &__btn-drawer {
     &.ant-btn {
@@ -63,25 +81,34 @@
     .ant-menu .ant-menu-item .anticon + span {
       margin-inline-start: 0px;
     }
+    &.ant-menu.ant-menu-root.ant-menu-inline {
+      border-inline-end: none !important;
+    }
     // item header ------------------------------------
-    &.ant-menu-light .ant-menu-item {
+    &.ant-menu .ant-menu-item {
       color: var(--text-unselected);
       font-size: var(--font-15);
       padding-inline: 16px;
     }
-    &.ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected {
+    &.ant-menu.ant-menu-horizontal > .ant-menu-item-selected {
       color: var(--blue);
     }
-    &.ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected::after {
+    &.ant-menu.ant-menu-horizontal > .ant-menu-item-selected::after {
       border-bottom-color: transparent;
     }
-    &.ant-menu-light.ant-menu-horizontal > .ant-menu-item:hover::after {
+    &.ant-menu.ant-menu-horizontal > .ant-menu-item:hover::after {
       border-bottom-color: transparent;
     }
-    &.ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover {
+    &.ant-menu .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover {
       color: var(--blue);
     }
-    &.ant-menu-item >.ant-menu-title-content {
+    &.ant-menu-item > .ant-menu-title-content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 8px;
+    }
+    &.ant-menu .ant-menu-title-content {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -95,14 +122,30 @@
       content: none;
     }
   }
-  // icon header(mobile) ------------------------------------
-  .icon-header {
-    font-size: var(--font-16);
-    width: 18px;
-    transition: all 0.3s ease-out;
-    text-align: center;
-    display: none;
+}
+.head__menu.ant-menu.ant-menu-root.ant-menu-inline {
+  border-inline-end: none;
+}
+.wrap-title-content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
+}
+// icon header(mobile) ------------------------------------
+.icon-header {
+  font-size: var(--font-16);
+  width: 24px;
+  transition: all 0.3s ease-out;
+  text-align: center;
+  display: none;
+  @include respond.respond(sm, down) {
+    display: flex;
+    flex-flow: row nowrap;
   }
+}
+.ant-drawer .drawer-nef .ant-drawer-body {
+  padding: 10px;
 }
 // language ------------------------------------
 .language {
@@ -163,9 +206,6 @@
   .menu-head-container.ant-menu-light .ant-menu-item {
     padding-inline: 0px;
     font-size: var(--font-12);
-  }
-  .icon-header {
-    display: block;
   }
   .header {
     display: block;

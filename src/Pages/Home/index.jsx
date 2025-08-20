@@ -6,6 +6,7 @@ import FieldActivity from './Components/FieldActivity';
 import FeaturedProducts from './Components/FeaturedProducts';
 import FAQ from './Components/FAQ';
 import '../../Styles/HomePage.scss';
+import EmployeeTeam from './Components/EmployeeTeam';
 
 const { Title } = Typography;
 
@@ -63,6 +64,15 @@ const HomePage = () => {
               Sản phẩm nổi bật
             </Title>
             <FeaturedProducts baseUrl={BASE_URL_FE} />
+          </div>
+
+          {/* Featured Products --------------------------------------------- */}
+          <div className="section section--employee-team">
+            {/* title ------------------ */}
+            <Title className="section__title" level={2}>
+              Đội ngũ nhân viên
+            </Title>
+            <EmployeeTeam baseUrl={BASE_URL_FE} />
           </div>
 
           {/* FAQ --------------------------------------------- */}

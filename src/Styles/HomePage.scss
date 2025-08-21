@@ -207,106 +207,106 @@
 }
 
 // carousel ------------------------------------
-.employee-team {
-  padding: 30px 80px;
-  // &__carousel {
-  // }
-  @include respond.respond(md, down) {
-    padding: 20px 10px;
-  }
-  &__img {
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  &__members {
-    padding: 30px 0;
-    @include respond.respond(md, down) {
-      padding: 10px 0;
-    }
-  }
-  &__lists {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 26px;
-    @include respond.respond-between(0, 375px) {
-      flex-flow: column nowrap;
-    }
-    @include respond.respond-between(376px, 550px) {
-      justify-content: center;
-    }
-    @include respond.respond(md, down) {
-      gap: 16px;
-    }
-  }
-  &__item {
-    min-width: 160px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-  &__item .ant-image .ant-image-img {
-    height: 69px;
-    width: 69px;
-    border-radius: 50%;
-  }
-  &__member-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    position: relative;
-    background: var(--grd-primary);
-    border-radius: 50%;
-  }
-  &__bg-manager {
-    background: linear-gradient(169deg, #ffd900, #b45264 93.68%);
-  }
-  &__info {
-    margin: 16px 0 0 0;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background: rgb(163 132 253 / 9%);
-    padding: 8px 12px;
-    border-radius: 16px;
-    width: 100%;
-  }
-  &__info-manager {
-    background: rgb(206 129 65 / 23%);
-  }
-  &__position {
-    font-size: var(--font-14);
-    font-weight: 500;
-    color: var(--charcoal-dark);
-    @include respond.respond(md, down) {
-      font-size: var(--font-13);
-    }
-  }
-  &__name {
-    font-size: var(--font-16);
-    font-weight: 600;
-    color: var(--than);
-    @include respond.respond(md, down) {
-      font-size: var(--font-13);
-    }
-  }
-  //   @include respond.respond(xls, down) {
-  //   &__layout {
-  //     width: 100%;
-  //     padding: 0 20px;
-  //   }
-  // }
-  // @include respond.respond-between(740px, 1300px) {
-  //   &__left {
-  //     flex-direction: row-reverse;
-  //   }
-  // }
-}
+// .employee-team {
+//   padding: 30px 80px;
+//   // &__carousel {
+//   // }
+//   @include respond.respond(md, down) {
+//     padding: 20px 10px;
+//   }
+//   &__img {
+//     border-radius: 5px;
+//     overflow: hidden;
+//   }
+//   &__members {
+//     padding: 30px 0;
+//     @include respond.respond(md, down) {
+//       padding: 10px 0;
+//     }
+//   }
+//   &__lists {
+//     display: flex;
+//     flex-flow: row wrap;
+//     justify-content: flex-start;
+//     align-items: center;
+//     gap: 26px;
+//     @include respond.respond-between(0, 375px) {
+//       flex-flow: column nowrap;
+//     }
+//     @include respond.respond-between(376px, 550px) {
+//       justify-content: center;
+//     }
+//     @include respond.respond(md, down) {
+//       gap: 16px;
+//     }
+//   }
+//   &__item {
+//     min-width: 160px;
+//     display: flex;
+//     flex-flow: column nowrap;
+//     justify-content: center;
+//     align-items: center;
+//   }
+//   &__item .ant-image .ant-image-img {
+//     height: 69px;
+//     width: 69px;
+//     border-radius: 50%;
+//   }
+//   &__member-img {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 8px;
+//     position: relative;
+//     background: var(--grd-primary);
+//     border-radius: 50%;
+//   }
+//   &__bg-manager {
+//     background: linear-gradient(169deg, #ffd900, #b45264 93.68%);
+//   }
+//   &__info {
+//     margin: 16px 0 0 0;
+//     display: flex;
+//     flex-flow: column nowrap;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 10px;
+//     background: rgb(163 132 253 / 9%);
+//     padding: 8px 12px;
+//     border-radius: 16px;
+//     width: 100%;
+//   }
+//   &__info-manager {
+//     background: rgb(206 129 65 / 23%);
+//   }
+//   &__position {
+//     font-size: var(--font-14);
+//     font-weight: 500;
+//     color: var(--charcoal-dark);
+//     @include respond.respond(md, down) {
+//       font-size: var(--font-13);
+//     }
+//   }
+//   &__name {
+//     font-size: var(--font-16);
+//     font-weight: 600;
+//     color: var(--than);
+//     @include respond.respond(md, down) {
+//       font-size: var(--font-13);
+//     }
+//   }
+//   //   @include respond.respond(xls, down) {
+//   //   &__layout {
+//   //     width: 100%;
+//   //     padding: 0 20px;
+//   //   }
+//   // }
+//   // @include respond.respond-between(740px, 1300px) {
+//   //   &__left {
+//   //     flex-direction: row-reverse;
+//   //   }
+//   // }
+// }
 
 // FAQ -----------------------
 .faq {

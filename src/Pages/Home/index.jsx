@@ -50,7 +50,6 @@ const HomePage = () => {
           {/* ================= content ================= */}
           {/* Field Activity --------------------------------------------- */}
           <div className="section section--activity">
-            {/* title ------------------ */}
             <Title className="section__title" level={2}>
               Lĩnh vực hoạt động
             </Title>
@@ -59,25 +58,22 @@ const HomePage = () => {
 
           {/* Featured Products --------------------------------------------- */}
           <div className="section section--products">
-            {/* title ------------------ */}
             <Title className="section__title" level={2}>
               Sản phẩm nổi bật
             </Title>
             <FeaturedProducts baseUrl={BASE_URL_FE} />
           </div>
 
-          {/* Featured Products --------------------------------------------- */}
-          <div className="section section--employee-team">
-            {/* title ------------------ */}
+          {/* design DevTeam --------------------------------------------- */}
+          {/* <div className="section section--employee-team">
             <Title className="section__title" level={2}>
               Đội ngũ nhân viên
             </Title>
             <EmployeeTeam baseUrl={BASE_URL_FE} />
-          </div>
+          </div> */}
 
           {/* FAQ --------------------------------------------- */}
           <div className="section section--fqa">
-            {/* title ------------------ */}
             <Title className="section__title" level={2}>
               Câu hỏi thường gặp
             </Title>

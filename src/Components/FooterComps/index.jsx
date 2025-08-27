@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Col, Image, message, Row, Card } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTelegram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { faCopyright, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { formatNumber } from '../../utils/formats';
 import useInfoWebStore from '../../store/infoWeb';
 import { useTranslation } from 'react-i18next';
@@ -124,6 +124,11 @@ function FooterD() {
                 </Col>
               </Row>
               <Row className="list-items">
+                <Col xs={24} sm={24} lg={24} xl={24} xxl={24}>
+                  <FontAwesomeIcon className="icon" icon={faLocationDot} />
+                  <span className="me-4">{t('address')}:</span>
+                  <span>{infoWeb?.address}</span>
+                </Col>
                 <Col xs={24} sm={24} lg={24} xl={24} xxl={24}>
                   <div className="footer-copyright cursor-default">
                     <FontAwesomeIcon className="icon" icon={faCopyright} />

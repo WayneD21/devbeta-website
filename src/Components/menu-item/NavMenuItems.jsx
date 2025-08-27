@@ -31,7 +31,7 @@ export const getNavMenuItems = (t) => [
     label: (
       <span className="wrap-title-content">
         <span className="icon-header">
-          <Icon icon="fluent:chart-person-20-filled" width="20" height="20" />
+          <Icon icon="fluent:chart-person-20-filled" width="24" height="24" />
         </span>
         <span className="text-header">{t('fieldActivity')}</span>
       </span>
@@ -51,23 +51,11 @@ export const getNavMenuItems = (t) => [
     className: 'fw-500',
   },
   {
-    key: routes.recruitment,
-    label: (
-      <span className="wrap-title-content">
-        <span className="icon-header">
-          <Icon icon="fluent-mdl2:recruitment-management" width="2048" height="2048" />
-        </span>
-        <span className="text-header">{t('recruitment')}</span>
-      </span>
-    ),
-    className: 'fw-500',
-  },
-  {
     key: routes.rules,
     label: (
       <span className="wrap-title-content">
         <span className="icon-header">
-          <Icon icon="game-icons:white-book" width="512" height="512" />
+          <Icon icon="game-icons:white-book" width="24" height="24" />
         </span>
         <span className="text-header">{t('rules')}</span>
       </span>

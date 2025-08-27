@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import HomePage from '../../Pages/Home/index.jsx';
-import Recruitment from '../../Pages/Recruitment/index.jsx';
 import Rules from '../../Pages/Rules/index.jsx';
 import Product from '../../Pages/Product/index.jsx';
 import FieldActivity from '../../Pages/FieldActivity/index.jsx';
@@ -54,19 +53,6 @@ export const FAQRouter = () => {
         <title>{t('FAQ')}</title>
       </Helmet>
       <FAQ />
-    </>
-  );
-};
-
-// Home ----------------------------
-export const RecruitmentRoute = () => {
-  const { t } = useTranslation();
-  return (
-    <>
-      <Helmet>
-        <title>{t('recruitment')}</title>
-      </Helmet>
-      <Recruitment />
     </>
   );
 };

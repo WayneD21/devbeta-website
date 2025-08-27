@@ -9,34 +9,92 @@
   min-height: 100vh;
   min-height: 100dvh;
   padding: 66px 0 0 0;
+  // (max-width: 1199.98px)
+  @include respond.respond(lg, down) {
+    padding: 0;
+  }
   &__banner {
     position: relative;
     display: flex;
     justify-content: flex-end;
     padding: 0 0 66px 0;
+    // (min-width: 992px) and (max-width: 1199.98px)
+    @include respond.respond(lg, only) {
+      padding: 0;
+    }
+    // (max-width: 991.98px)
+    @include respond.respond(md, down) {
+      padding: 0;
+    }
     .banner__hero {
       position: absolute;
       top: 36px;
       left: 0;
       z-index: 2;
+      @include respond.respond(lg, only) {
+        top: 36px;
+      }
+      // @include respond.respond(md, down) {
+      //   top: 36px;
+      // }
     }
     // .banner__text {
     // }
     .banner__title {
-      font-size: var(--font-50);
+      font-size: var(--font-40);
       cursor: default;
+      @include respond.respond(lg, only) {
+        font-size: var(--font-36);
+      }
+      @include respond.respond(md, only) {
+        font-size: var(--font-30);
+      }
+      @include respond.respond(sm, down) {
+        font-size: var(--font-26);
+      }
     }
     .banner__subtitle {
       font-size: var(--font-16);
       font-weight: 500;
       padding-top: 20px;
-      width: 33%;
+      width: 60%;
+      // (min-width: 768px) and (max-width: 991.98px)
+      @include respond.respond(md, only) {
+        width: 70%;
+        padding-top: 16px;
+      }
+      // (min-width: 576px) and (max-width: 767.98px)
+      @include respond.respond(sm, only) {
+        width: 80%;
+        padding-top: 10px;
+      }
+      //  and (max-width: 0px) (min-width: 575.98px)
+      @include respond.respond(xs, only) {
+        width: 100%;
+        padding-top: 10px;
+      }
+      // (max-width: 991.98px)
+      @include respond.respond(md, down) {
+        font-size: var(--font-15);
+      }
     }
     .banner__img {
-      margin: 60px 0 0 0;
+      margin: 90px 0 0 0;
+      @include respond.respond(lg, only) {
+        margin: 120px 0 0 0;
+      }
+      @include respond.respond(md, only) {
+        margin: 120px 0 0 0;
+      }
+      @include respond.respond(sm, only) {
+        margin: 120px 0 0 0;
+      }
+      @include respond.respond(xs, down) {
+        margin: 160px 0 0 0;
+      }
     }
   }
-  // @include mixins.respond(xs) {
+  // @include respond.respond(xs,down) {
   //   padding: 10px 16px;
   //   &__banner {
   //     padding: 0 0 36px 0;
@@ -54,11 +112,12 @@
   // }
 }
 .section {
-  &__title {
+  &__title.ant-typography {
     padding: 0 0 8px 0;
     display: inline-block;
     border-bottom: 2px solid var(--blue-ice);
     cursor: default;
+    color: var(--than);
   }
   &--activity {
     padding: 0 0 120px 0;
@@ -79,7 +138,7 @@
     }
   }
   &--fqa {
-    padding: 0 0 20px 0;
+    padding: 0;
     .section__title {
       margin-bottom: 36px;
     }
@@ -102,31 +161,50 @@
 // field-activity -----------------------------
 .field-activity {
   &__list {
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
+    gap: 60px;
+    @include respond.respond-between(768px, 1080px) {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      gap: 60px;
+    }
+    @include respond.respond-between(0, 768px) {
+      grid-template-columns: 1fr;
+      gap: 80px 0;
+    }
+    @include respond.respond(sm, only) {
+      padding: 0 60px;
+    }
+    @include respond.respond(xs, only) {
+      padding: 0 20px;
+    }
   }
-  &__item {
-    width: 30%;
-  }
-  &__card {
-    border: none;
-    box-shadow: var(--boxshadow-drop);
-    min-height: 290px;
+  // &__item {
+  //   width: 30%;
+  // }
+  &__card.ant-card {
+    // border: none;
+    min-height: 346px;
     border-radius: 16px;
-    .ant-card-body {
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      flex-flow: column nowrap;
-      gap: 4px;
-      padding: 76px 20px 20px 20px;
-    }
-    .ant-typography {
-      color: var(--blue);
-      cursor: default;
-    }
+    transition: all 0.23s ease-out;
+  }
+  &__card.ant-card:hover {
+    box-shadow: var(--boxshadow-drop);
+  }
+  &__card .ant-card-body {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    gap: 4px;
+    padding: 76px 20px 20px 20px;
+  }
+  &__card .ant-typography {
+    color: var(--blue);
+    cursor: default;
   }
   &__icon {
     position: absolute;
@@ -175,6 +253,24 @@
       display: flex;
       flex-flow: row nowrap;
       gap: 56px;
+      @include respond.respond(md, only) {
+        flex-flow: column;
+        align-items: center;
+        gap: 16px;
+        padding: 0 60px;
+      }
+      @include respond.respond(sm, only) {
+        flex-flow: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 40px;
+      }
+      @include respond.respond(xs, only) {
+        flex-flow: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 16px;
+      }
     }
     .ant-typography {
       color: var(--blue);
@@ -185,6 +281,15 @@
   // }
   &__img.ant-image-img {
     width: 220px;
+    @include respond.respond(md, only) {
+      width: 180px;
+    }
+    @include respond.respond(sm, only) {
+      width: 170px;
+    }
+    @include respond.respond(xs, only) {
+      width: 160px;
+    }
   }
   &__desc {
     font-size: var(--font-15);
@@ -307,6 +412,92 @@
 //   //   }
 //   // }
 // }
+
+.recruitment {
+  padding: 0 0 40px 0;
+  &__form-filter {
+    padding: 10px 0 26px 0;
+  }
+  &__row-filter {
+    @include respond.respond(md, only) {
+      align-items: flex-end;
+    }
+    @include respond.respond(sm, only) {
+      align-items: flex-end;
+    }
+    @include respond.respond(xs, only) {
+      align-items: flex-end;
+    }
+  }
+  .wrap-job-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+  }
+  &__job-card.ant-card {
+    border-radius: 15px;
+    color: var(--than);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.26s ease-out;
+  }
+  &__job-card.ant-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+  }
+  &__job-body {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 114px;
+  }
+  &__job-img {
+  }
+  &__job-title.ant-typography {
+    color: var(--than);
+  }
+  &__job-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+  &__job-item {
+    padding-bottom: 6px;
+    font-size: var(--font-15);
+  }
+  &__job-icon {
+    width: 20px;
+    color: var(--blue);
+    font-size: var(--font-18);
+  }
+  &__job-desc {
+    margin: 0 0 0 6px;
+  }
+  &__job-time-update {
+  }
+}
+.form-item-input .ant-input-affix-wrapper {
+  border-radius: 10px;
+}
+.form-item-select .ant-select-single .ant-select-selector {
+  border-radius: 10px;
+}
+.btn-search {
+  padding: 4px 16px;
+  color: var(--white);
+  background: var(--blue);
+  border: solid 1px var(--blue);
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+  border-radius: 10px;
+  height: 34px;
+}
+.btn-search.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
+  border: solid 1px var(--blue);
+  color: var(--blue);
+  background: white;
+  opacity: 0.9;
+}
 
 // FAQ -----------------------
 .faq {

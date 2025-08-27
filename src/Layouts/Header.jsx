@@ -2,16 +2,15 @@ import { useEffect, useState } from 'react';
 import { Layout, Image, Menu, Select, Button, Drawer } from 'antd';
 import { getNavMenuItems } from '../Components/menu-item/NavMenuItems';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import useProfileStore from '../store/useProfile';
 import { useTranslation } from 'react-i18next';
 import useInfoWebStore from '../store/infoWeb';
 import routes from '../configs/routesPath';
-import { logoutApp } from '../utils/auth';
+// import { logoutApp } from '../utils/auth';
 import { getSid } from '../utils/auth';
-
 import '../Styles/Header.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const BASE_URL_FE = import.meta.env.VITE_FE_BASE;
 
@@ -82,7 +81,7 @@ const HeaderCustom = () => {
     key: item.value,
     value: item.value,
     label: (
-      <div className="language__label">
+      <div className="header__language-label">
         <Image
           className="rounded-circle"
           width={26}
@@ -101,10 +100,6 @@ const HeaderCustom = () => {
     <div className="header">
       <Header className="header__layout">
         <div className="header__left">
-          {/* Logo --------------------------------- */}
-          <Link className="header__logo-link" to={'/'}>
-            <Image className="header__img" preview={false} src={BASE_URL_FE + 'images/logo-devbeta.svg'} alt="Image" />
-          </Link>
           <Button
             className="header__btn-drawer"
             style={{ display: menuMode === 'inline' ? 'block' : 'none' }}
@@ -114,6 +109,10 @@ const HeaderCustom = () => {
             }}
             icon={<FontAwesomeIcon icon={faBars} />}
           />
+          {/* Logo --------------------------------- */}
+          <Link className="header__logo-link" to={'/'}>
+            <Image className="header__img" preview={false} src={BASE_URL_FE + 'images/logo-devbeta.svg'} alt="Image" />
+          </Link>
           {/* Navigation Menu --------------------------------- */}
           {menuMode === 'inline' ? (
             <Drawer
@@ -158,9 +157,9 @@ const HeaderCustom = () => {
           )}
         </div>
         {/* select language --------------------------------- */}
-        <div className="language">
+        <div className="header__right">
           <Select
-            className="language__select"
+            className="header__select-language"
             value={language}
             onChange={changeLanguage}
             options={optionsLanguage}

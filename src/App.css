@@ -177,7 +177,8 @@ html {
 }
 body {
   font-family: 'Inter', serif !important;
-  overflow: initial;
+  overflow-y: auto;
+  overflow-x: hidden;
   background: var(--white);
   color: var(--text-primary);
 }

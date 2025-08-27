@@ -8,7 +8,6 @@ import {
   ProductRoute,
   FieldActivityRoute,
   FAQRouter,
-  RecruitmentRoute,
   RulesRoute,
 } from './Components/RouteComponents.jsx';
 
@@ -22,7 +21,6 @@ export const appRoutes = createBrowserRouter(
         <Route path={routes.product} element={<ProductRoute />} />
         <Route path={routes.fieldActivity} element={<FieldActivityRoute />} />
         <Route path={routes.faq} element={<FAQRouter />} />
-        <Route path={routes.recruitment} element={<RecruitmentRoute />} />
         <Route path={routes.rules} element={<RulesRoute />} />
       </Route>
     </Route>,

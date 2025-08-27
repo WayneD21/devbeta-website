@@ -1,12 +1,13 @@
-import { Image, message, Typography } from 'antd';
+import { Form, Image, message, Typography } from 'antd';
 import useStateDev from '../../utils/useStateDev';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import FieldActivity from './Components/FieldActivity';
 import FeaturedProducts from './Components/FeaturedProducts';
+// import EmployeeTeam from './Components/EmployeeTeam';
+import Recruitment from './Components/Recruitment';
 import FAQ from './Components/FAQ';
 import '../../Styles/HomePage.scss';
-import EmployeeTeam from './Components/EmployeeTeam';
 
 const { Title } = Typography;
 
@@ -17,6 +18,47 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { t } = useTranslation(); // Language
   const [messageApi, contextHolder] = message.useMessage();
+  const [formRecruitment] = Form.useForm();
+
+  const jobInfo = {
+    data: [
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+      {
+        title: 'Lập trình viên thực tập',
+        company: 'Công ty cổ phần DevBeta',
+        address: 'Ngòi A, Văn Yên, Yên Bái',
+        workingTime: 'Full-time',
+        salary: 'Thỏa thuận',
+        updateTime: '1 tuần trước',
+      },
+    ],
+  };
+  
+  const datasRecruitment = jobInfo?.data;
+  console.log(datasRecruitment);
 
   return (
     <>
@@ -35,7 +77,7 @@ const HomePage = () => {
                 </h1>
                 <p className="banner__subtitle">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
-                  fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
+                  fermentum sapien, eget iaculis arcu. sapien, eget iaculis arcu. sapien, eget iaculis arcu.
                 </p>
               </div>
             </div>
@@ -62,6 +104,14 @@ const HomePage = () => {
               Sản phẩm nổi bật
             </Title>
             <FeaturedProducts baseUrl={BASE_URL_FE} />
+          </div>
+
+          {/* design DevTeam --------------------------------------------- */}
+          <div className="section section--employee-team">
+            <Title className="section__title" level={2}>
+              Tuyển dụng
+            </Title>
+            <Recruitment form={formRecruitment} datas={datasRecruitment} baseUrl={BASE_URL_FE} />
           </div>
 
           {/* design DevTeam --------------------------------------------- */}

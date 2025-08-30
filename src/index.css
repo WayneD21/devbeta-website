@@ -127,3 +127,6 @@
   -ms-user-select: none;
   pointer-events: auto; /* Vẫn cho click, nhưng không cho select */
 }
+
+/* @media (max-width: 739px) {
+} */

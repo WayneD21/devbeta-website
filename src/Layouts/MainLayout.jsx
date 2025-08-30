@@ -6,6 +6,7 @@ import FooterD from '../Components/FooterComps';
 import HeaderCustom from './Header';
 import '../Styles/MainLayout.scss';
 import { Layout } from 'antd';
+import ScrollToTop from '../Components/ScrollToTop';
 
 const MainLayout = () => {
   const [islog, setIsLog] = useState(false);
@@ -27,6 +28,8 @@ const MainLayout = () => {
         <div className="wrap-main-layout">
           <Layout className="layout-nef">
             <HeaderCustom />
+            {/* cuộn --------------------- */}
+            <ScrollToTop />
             <main className="main-layout">
               <Outlet />
             </main>

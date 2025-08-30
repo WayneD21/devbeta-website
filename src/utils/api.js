@@ -38,6 +38,7 @@ export const apiRequest = async (
   headers = { 'Content-Type': 'application/json' },
   timeout = 5000,
 ) => {
+  // eslint-disable-next-line no-useless-catch
   try {
     const config = {
       method,

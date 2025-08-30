@@ -1,0 +1,28 @@
+import { Button, Image, Typography } from 'antd';
+
+const { Title } = Typography;
+
+const SubBanner = ({ baseUrl }) => {
+  return (
+    <>
+      <div className="sub-banner">
+        {/* desc ------------------------- */}
+        <div className="sub-banner__wrap">
+          <div className="sub-banner__left">Được phục vụ bạn là Vinh Hạnh của chúng tôi</div>
+          <div className='sub-banner__center'></div>
+          <div className="sub-banner__right">
+            <div className='sub-banner___right-text'>
+              Trở thành đối tác đồng hành và phát triển cùng các bạn là niềm tự hào lớn lao đối với
+              DevBeta.
+            </div>
+            <Button className='sub-banner___right-button' onClick={() => {}}>
+                Tư vấn tôi?
+            </Button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SubBanner;

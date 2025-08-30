@@ -10,14 +10,9 @@
   min-height: 100dvh;
   padding: 66px 0 0 0;
   // (max-width: 1199.98px)
-  @include respond.respond(lg, down) {
-    padding: 0;
-  }
   &__banner {
-    position: relative;
     display: flex;
     justify-content: flex-end;
-    padding: 0 0 66px 0;
     // (min-width: 992px) and (max-width: 1199.98px)
     @include respond.respond(lg, only) {
       padding: 0;
@@ -34,6 +29,15 @@
       @include respond.respond(lg, only) {
         top: 36px;
       }
+      @include respond.respond(md, only) {
+        left: 20px;
+      }
+      @include respond.respond(sm, only) {
+        left: 20px;
+      }
+      @include respond.respond(xs, only) {
+        left: 10px;
+      }
       // @include respond.respond(md, down) {
       //   top: 36px;
       // }
@@ -41,23 +45,23 @@
     // .banner__text {
     // }
     .banner__title {
-      font-size: var(--font-40);
+      font-size: var(--font-36);
       cursor: default;
       @include respond.respond(lg, only) {
-        font-size: var(--font-36);
+        font-size: var(--font-32);
       }
       @include respond.respond(md, only) {
-        font-size: var(--font-30);
+        font-size: var(--font-26);
       }
       @include respond.respond(sm, down) {
-        font-size: var(--font-26);
+        font-size: var(--font-24);
       }
     }
     .banner__subtitle {
-      font-size: var(--font-16);
+      font-size: var(--font-17);
       font-weight: 500;
       padding-top: 20px;
-      width: 60%;
+      width: 40%;
       // (min-width: 768px) and (max-width: 991.98px)
       @include respond.respond(md, only) {
         width: 70%;
@@ -79,20 +83,25 @@
       }
     }
     .banner__img {
-      margin: 90px 0 0 0;
+      margin: 26px 0 0 0;
       @include respond.respond(lg, only) {
-        margin: 120px 0 0 0;
+        margin: 90px 0 0 0;
       }
       @include respond.respond(md, only) {
-        margin: 120px 0 0 0;
+        margin: 70px 0 0 0;
       }
       @include respond.respond(sm, only) {
-        margin: 120px 0 0 0;
+        margin: 90px 0 0 0;
       }
       @include respond.respond(xs, down) {
-        margin: 160px 0 0 0;
+        margin: 140px 0 0 0;
       }
     }
+  }
+  &__width {
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
   }
   // @include respond.respond(xs,down) {
   //   padding: 10px 16px;
@@ -111,37 +120,118 @@
   //   }
   // }
 }
+// sub banner -----------------------
+.sub-banner {
+  &__wrap {
+    margin: 40px 0;
+    padding: 30px 60px;
+    border-radius: 20px;
+    background-image: url('/images/sub-banner-bg.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 1100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  &__left {
+    font-size: var(--font-26);
+    font-weight: 500;
+    color: rgb(240 240 240);
+  }
+  &__center {
+    width: 4px;
+    height: initial;
+    background: rgb(255, 255, 255);
+    transform: rotate(12deg);
+    border-radius: 99px;
+  }
+  &__right {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 18px;
+    padding: 0 0 0 20px;
+  }
+  &___right-text {
+    font-size: var(--font-16);
+    color: rgb(240 240 240);
+  }
+  &___right-button {
+    font-size: var(--font-16);
+    font-weight: 600;
+    background-color: var(--white);
+    color: rgb(94 125 254);
+    border: none;
+    border-radius: 99px;
+    width: 300px;
+    height: 40px;
+  }
+}
+
 .section {
   &__title.ant-typography {
-    padding: 0 0 8px 0;
-    display: inline-block;
-    border-bottom: 2px solid var(--blue-ice);
+    padding: 8px;
+    border-radius: 99px;
+    // border-bottom: 2px solid var(--blue-ice);
+    // background: linear-gradient(90deg, rgb(255 255 255), rgb(121 179 255) 260%);
     cursor: default;
     color: var(--than);
+    @include respond.respond(xs, only) {
+      font-size: var(--font-26);
+    }
   }
   &--activity {
-    padding: 0 0 120px 0;
-    .section__title {
-      margin-bottom: 120px;
+    padding: 0 0 99px 0;
+    @include respond.respond(lg, only) {
+      padding: 0 0 40px 0;
+    }
+    @include respond.respond(md, only) {
+      padding: 0 0 40px 0;
+    }
+    @include respond.respond(xs, only) {
+      padding: 0 0 40px 0;
+    }
+  }
+  &--activity .section__title {
+    margin: 0 0 90px 0;
+    @include respond.respond(xs, only) {
+      margin: 0 0 90px 10px;
     }
   }
   &--products {
-    padding: 0 0 60px 0;
+    padding: 20px 60px;
+    background: rgb(242 246 255);
+    @include respond.respond(lg, only) {
+      padding: 0 0 10px 0;
+    }
+    @include respond.respond(md, only) {
+      padding: 0 0 10px 0;
+    }
+    @include respond.respond(xs, only) {
+      padding: 0 0 10px 0;
+    }
     .section__title {
-      margin-bottom: 46px;
+      margin: 0 0 36px 0;
     }
   }
   &--employee-team {
-    padding: 0 0 20px 0;
+    padding: 0 0 40px 0;
     .section__title {
-      margin-bottom: 36px;
+      margin: 0 0 36px 0;
     }
   }
   &--fqa {
     padding: 0;
     .section__title {
-      margin-bottom: 36px;
+      margin: 0 0 36px 0;
     }
+  }
+  &__width {
+    width: 1300px;
+    margin: 0 auto;
   }
   // @include mixins.respond(xs) {
   //   &__title {
@@ -160,16 +250,19 @@
 }
 // field-activity -----------------------------
 .field-activity {
+  @include respond.respond(md, only) {
+    padding: 0 20px;
+  }
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
     @include respond.respond-between(768px, 1080px) {
       grid-template-columns: 1fr 1fr;
       justify-content: center;
-      gap: 60px;
+      gap: 80px 60px;
     }
     @include respond.respond-between(0, 768px) {
       grid-template-columns: 1fr;
@@ -182,17 +275,44 @@
       padding: 0 20px;
     }
   }
-  // &__item {
-  //   width: 30%;
-  // }
-  &__card.ant-card {
-    // border: none;
-    min-height: 346px;
-    border-radius: 16px;
-    transition: all 0.23s ease-out;
+  &__item {
+    border-radius: 76px;
+    padding: 8px;
   }
-  &__card.ant-card:hover {
-    box-shadow: var(--boxshadow-drop);
+  &__item.item-release {
+    background: linear-gradient(8deg, rgb(220, 191, 255), rgb(121 179 255));
+  }
+  &__item.item-social-ads {
+    background: linear-gradient(8deg, rgb(180 255 241), rgb(121 179 255));
+  }
+  &__item.item-provide {
+    background: linear-gradient(46deg, rgb(248 205 218), rgb(121 179 255));
+  }
+  &__card.ant-card {
+    position: relative;
+    border: none;
+    min-height: 346px;
+    border-radius: 59px;
+    transition: all 0.23s ease-out;
+    background: var(--white);
+    @include respond.respond(md, only) {
+      min-height: 368px;
+    }
+    @include respond.respond(sm, only) {
+      min-height: 280px;
+    }
+    @include respond.respond(xs, only) {
+      min-height: 280px;
+    }
+  }
+  &__cot-affter {
+    position: absolute;
+    top: 84px;
+    left: 24px;
+    height: 46px;
+    width: 4px;
+    border-radius: 10px;
+    background: rgb(167 189 242);
   }
   &__card .ant-card-body {
     position: relative;
@@ -200,20 +320,23 @@
     justify-content: flex-start;
     flex-flow: column nowrap;
     gap: 4px;
-    padding: 76px 20px 20px 20px;
+    padding: 76px 20px 20px 36px;
   }
   &__card .ant-typography {
-    color: var(--blue);
+    color: rgb(128 168 236);
     cursor: default;
   }
   &__icon {
     position: absolute;
-    top: -60px;
+    top: -68px;
     left: 20px;
+    border-radius: 50%;
+    border: 6px solid var(--white);
   }
   &__desc {
-    font-size: var(--font-15);
     color: var(--text-primary);
+    font-weight: 500;
+    font-size: var(--font-15);
   }
   // @include mixins.respond(xs) {
   //   &__list {
@@ -238,54 +361,73 @@
 }
 // featured-products -----------------------------
 .featured-products {
+  @include respond.respond(md, only) {
+    padding: 0 20px;
+  }
   &__list {
   }
   &__item {
-    margin: 0 0 60px 0;
+    margin: 0 0 40px 0;
+    @include respond.respond(xs, only) {
+      margin: 0 0 40px 0;
+    }
   }
   &__card {
     border: none;
-    .ant-card-body {
-      padding: 0;
+    background: transparent;
+  }
+  &__card .ant-card-body {
+    padding: 0;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 66px;
+    @include respond.respond(md, only) {
+      flex-flow: column;
+      align-items: center;
+      gap: 16px;
     }
-    .featured-products__body {
-      position: relative;
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 56px;
-      @include respond.respond(md, only) {
-        flex-flow: column;
-        align-items: center;
-        gap: 16px;
-        padding: 0 60px;
-      }
-      @include respond.respond(sm, only) {
-        flex-flow: column;
-        align-items: center;
-        gap: 12px;
-        padding: 0 40px;
-      }
-      @include respond.respond(xs, only) {
-        flex-flow: column;
-        align-items: center;
-        gap: 12px;
-        padding: 0 16px;
-      }
+    @include respond.respond(sm, only) {
+      flex-flow: column;
+      align-items: center;
+      gap: 12px;
+      padding: 0 40px;
     }
-    .ant-typography {
-      color: var(--blue);
-      cursor: default;
+    @include respond.respond(xs, only) {
+      flex-flow: column;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
     }
+  }
+  &__card .ant-typography {
+    color: var(--blue);
+    cursor: default;
   }
   // &__icon {
   // }
+  &__text {
+    position: relative;
+  }
+  &__divider {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    height: 99px;
+    width: 6px;
+    border-radius: 99px;
+    background: rgb(167, 189, 242);
+  }
   &__img.ant-image-img {
-    width: 220px;
+    width: 180px;
     @include respond.respond(md, only) {
-      width: 180px;
+      width: 170px;
     }
     @include respond.respond(sm, only) {
-      width: 170px;
+      width: 160px;
     }
     @include respond.respond(xs, only) {
       width: 160px;
@@ -294,6 +436,9 @@
   &__desc {
     font-size: var(--font-15);
     color: var(--text-primary);
+  }
+  &__desc-phu {
+    padding: 0 0 0 40px;
   }
   // @include mixins.respond(xs) {
   //   .featured-products__body {
@@ -415,6 +560,12 @@
 
 .recruitment {
   padding: 0 0 40px 0;
+  @include respond.respond(md, only) {
+    padding: 0 20px;
+  }
+  @include respond.respond(xs, only) {
+    padding: 0 20px;
+  }
   &__form-filter {
     padding: 10px 0 26px 0;
   }
@@ -434,21 +585,44 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 30px;
+    @include respond.respond(lg, only) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond.respond(md, only) {
+      grid-template-columns: 1fr;
+    }
+    @include respond.respond(sm, only) {
+      grid-template-columns: 1fr;
+    }
+    @include respond.respond(xs, only) {
+      grid-template-columns: 1fr;
+    }
   }
   &__job-card.ant-card {
     border-radius: 15px;
     color: var(--than);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     transition: all 0.26s ease-out;
+    position: relative;
   }
   &__job-card.ant-card:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
   }
+  &__job-card.ant-card .ant-card-body {
+    padding: 20px;
+    @include respond.respond(lg, only) {
+      padding: 16px;
+    }
+  }
   &__job-body {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    gap: 114px;
+    // display: flex;
+    // flex-flow: row nowrap;
+    // justify-content: flex-start;
+    // gap: 114px;
+    // @include respond.respond(xs, only) {
+    //   justify-content: space-between;
+    //   gap: 20px;
+    // }
   }
   &__job-img {
   }
@@ -460,10 +634,27 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     gap: 40px;
+    @include respond.respond(lg, only) {
+      gap: 20px;
+    }
+    @include respond.respond(xs, only) {
+      flex-flow: column;
+      gap: 16px;
+    }
+  }
+  &__job-info .ant-image .ant-image-img {
+    width: 99px;
+    @include respond.respond(lg, only) {
+      width: 66px;
+    }
   }
   &__job-item {
     padding-bottom: 6px;
     font-size: var(--font-15);
+  }
+  &__job-item.company-name {
+    font-size: var(--font-17);
+    font-weight: 500;
   }
   &__job-icon {
     width: 20px;
@@ -474,6 +665,13 @@
     margin: 0 0 0 6px;
   }
   &__job-time-update {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    @include respond.respond(lg, only) {
+      top: 16px;
+      right: 16px;
+    }
   }
 }
 .form-item-input .ant-input-affix-wrapper {
@@ -503,7 +701,14 @@
 .faq {
   display: flex;
   flex-flow: row nowrap;
-  padding: 0 0 0 8px;
+  padding: 0 0 0 16px;
+  @include respond.respond(md, only) {
+    padding: 0 20px;
+  }
+  @include respond.respond(xs, only) {
+    flex-direction: column-reverse;
+    padding: 0 20px;
+  }
   &__list {
     flex: 1;
   }
@@ -515,13 +720,42 @@
       font-weight: 500;
     }
   }
+  &__link-title {
+    font-size: var(--font-20);
+    font-weight: 500;
+    margin-bottom: 0.3em;
+    color: var(--blue);
+    display: block;
+    transition: all 0.3s ease-out;
+  }
+  &__link-title:hover {
+    text-decoration: underline;
+  }
   &__desc {
     font-size: var(--font-15);
   }
-  .wrap-faq__img {
-    flex: 1;
-    // .faq__img {
-    // }
+  &__img {
+    @include respond.respond(lg, only) {
+      flex: initial;
+    }
+    @include respond.respond(md, only) {
+      flex: initial;
+    }
+    @include respond.respond(xs, only) {
+      flex: initial;
+    }
+  }
+  &__img .ant-image .ant-image-img {
+    width: 430px;
+    @include respond.respond(lg, only) {
+      width: 360px;
+    }
+    @include respond.respond(md, only) {
+      width: 260px;
+    }
+    @include respond.respond(xs, only) {
+      width: 260px;
+    }
   }
   // @include mixins.respond(xs) {
   //   flex-flow: column nowrap;

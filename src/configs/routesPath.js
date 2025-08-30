@@ -4,7 +4,6 @@ const routes = {
   base_url: '',
   home: '',
   product: 'product',
-  recruitment: 'recruitment',
   fieldActivity: 'field-activity',
   faq: 'faq',
   rules: 'rules',

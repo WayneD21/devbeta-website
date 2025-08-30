@@ -20,10 +20,12 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
+                  <div className="featured-products__divider"></div>
                   <Title level={4}>ViewRP</Title>
                   <span className="featured-products__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
-                    fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
+                    ViewRP - Thế hệ mới của điều khiển điện thoại từ xa thông qua nền tảng website dù ở bất cứ đâu, bạn
+                    chỉ cần có thiết bị hỗ trợ trình duyệt và kết nối internet. Điều khiển một hay nhiều thiết bị đồng
+                    thời - tối ưu cho công việc cần tốc độ và quy mô.
                   </span>
                 </div>
               </div>
@@ -43,10 +45,11 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
+                  <div className="featured-products__divider"></div>
                   <Title level={4}>Box Proxy</Title>
                   <span className="featured-products__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
-                    fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
+                    Box proxy - chúng tôi tự tin là sản phẩm có giá thành hợp lý nhất hiện nay. Dùng cho nhiều mục đích
+                    sử dụng, tạo ra nhiều ip nhanh chóng và tối ưu nhất
                   </span>
                 </div>
               </div>
@@ -65,10 +68,16 @@ const FeaturedProducts = ({ baseUrl }) => {
                   />
                 </div>
                 <div className="featured-products__text">
+                  <div className="featured-products__divider"></div>
                   <Title level={4}>Dịch vụ thiết kế website</Title>
                   <span className="featured-products__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut pellentesque nulla. Curabitur non
-                    fermentum sapien, eget iaculis arcu. Suspendisse sit amet ultricies risus, vel consequat libero.
+                    Một website tuyệt vời không chỉ là sự trải nghiệm mượt mà và thực dụng của website, mà hơn hết chính
+                    là sự bảo mật cao của những sản phẩm chúng tôi tạo ra.
+                    <ul className="featured-products__desc-phu">
+                      <li>🌐 Website công ty, bán hàng, cá nhân, tin tức…</li>
+                      <li>🚀 Sử dụng và bảo hành trọn đời, chỉ gia hạn hosting & domain</li>
+                      <li>💰 Thanh toán sau khi hoàn thiện</li>
+                    </ul>
                   </span>
                 </div>
               </div>

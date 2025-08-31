@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Image, message, Typography } from 'antd';
 import useStateDev from '../../utils/useStateDev';
 import { useTranslation } from 'react-i18next';
@@ -27,44 +27,21 @@ const HomePage = () => {
     fetchInfoWeb(); // gọi API lấy info web
   }, []);
 
-  const jobInfo = {
-    data: [
-      {
-        title: 'Lập trình viên Backend thực tập',
-        company: 'Công ty cổ phần DevBeta',
-        address: 'Ngòi A, Văn Yên, Yên Bái',
-        workingTime: '3 Tháng',
-        salary: 'Thỏa thuận',
-        updateTime: '1 tuần trước',
-      },
-      {
-        title: 'Lập trình viên Backend',
-        company: 'Công ty cổ phần DevBeta',
-        address: 'Ngòi A, Văn Yên, Yên Bái',
-        workingTime: 'Full-time',
-        salary: '8-15 triệu đồng',
-        updateTime: '1 tuần trước',
-      },
-      {
-        title: 'Lập trình viên Frontend',
-        company: 'Công ty cổ phần DevBeta',
-        address: 'Ngòi A, Văn Yên, Yên Bái',
-        workingTime: 'Full-time',
-        salary: '8-15 triệu đồng',
-        updateTime: '1 tuần trước',
-      },
-      {
-        title: 'Designer',
-        company: 'Công ty cổ phần DevBeta',
-        address: 'Ngòi A, Văn Yên, Yên Bái',
-        workingTime: 'Full-time',
-        salary: '8-15 triệu đồng',
-        updateTime: '1 tuần trước',
-      },
-    ],
+  const [bannerSrc, setBannerSrc] = useState(BASE_URL_FE + 'images/banner-primary.jpg');
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setBannerSrc(BASE_URL_FE + 'images/banner-primary-mobile.jpg');
+    } else {
+      setBannerSrc(BASE_URL_FE + 'images/banner-primary.jpg');
+    }
   };
 
-  const datasRecruitment = jobInfo?.data;
+  handleResize(); // chạy lần đầu
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   return (
     <>
@@ -74,32 +51,18 @@ const HomePage = () => {
           {/* ================= banner ================= */}
           <div className="home__banner">
             <div className="home__width">
-              <div className="banner__hero">
-                <div className="banner__text">
-                  <h1 className="banner__title">
-                    <div>
-                      UY TÍN, <span style={{ color: 'var(--blue)' }}>CHẤT LƯỢNG,</span>
-                    </div>
-                    <span>BẮT KỊP XU THẾ</span>
-                  </h1>
-                  <p className="banner__subtitle">
-                    DEB BETA với đội ngũ trẻ, luôn luôn năng động, nhiệt huyết và sáng tạo. Chúng tôi sẽ cung cấp các
-                    dịch vụ phần mềm tốt nhất và hiệu quả nhất cho khách hàng của chúng tôi
-                  </p>
-                </div>
-              </div>
               <Image
                 className="banner__img"
                 fallback="Error"
                 preview={false}
-                src={BASE_URL_FE + 'images/banner-primary.png'}
+                src={bannerSrc}
               />
             </div>
           </div>
 
           <div className="section section--sub-banner">
             <div className="section__width">
-              <SubBanner baseUrl={BASE_URL_FE} />
+              <SubBanner infoWeb={infoWeb} baseUrl={BASE_URL_FE} />
             </div>
           </div>
 

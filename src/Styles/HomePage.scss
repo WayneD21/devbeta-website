@@ -8,11 +8,13 @@
 .home {
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 66px 0 0 0;
-  // (max-width: 1199.98px)
+  padding: 63px 0 0 0;
+  // &__width {
+  // }
   &__banner {
     display: flex;
     justify-content: flex-end;
+    position: relative;
     // (min-width: 992px) and (max-width: 1199.98px)
     @include respond.respond(lg, only) {
       padding: 0;
@@ -21,42 +23,7 @@
     @include respond.respond(md, down) {
       padding: 0;
     }
-    .banner__hero {
-      position: absolute;
-      top: 36px;
-      left: 0;
-      z-index: 2;
-      @include respond.respond(lg, only) {
-        top: 36px;
-      }
-      @include respond.respond(md, only) {
-        left: 20px;
-      }
-      @include respond.respond(sm, only) {
-        left: 20px;
-      }
-      @include respond.respond(xs, only) {
-        left: 10px;
-      }
-      // @include respond.respond(md, down) {
-      //   top: 36px;
-      // }
-    }
-    // .banner__text {
-    // }
-    .banner__title {
-      font-size: var(--font-36);
-      cursor: default;
-      @include respond.respond(lg, only) {
-        font-size: var(--font-32);
-      }
-      @include respond.respond(md, only) {
-        font-size: var(--font-26);
-      }
-      @include respond.respond(sm, down) {
-        font-size: var(--font-24);
-      }
-    }
+
     .banner__subtitle {
       font-size: var(--font-17);
       font-weight: 500;
@@ -83,70 +50,83 @@
       }
     }
     .banner__img {
-      margin: 26px 0 0 0;
-      @include respond.respond(lg, only) {
-        margin: 90px 0 0 0;
-      }
-      @include respond.respond(md, only) {
-        margin: 70px 0 0 0;
-      }
-      @include respond.respond(sm, only) {
-        margin: 90px 0 0 0;
-      }
-      @include respond.respond(xs, down) {
-        margin: 140px 0 0 0;
-      }
     }
   }
-  &__width {
-    position: relative;
-    width: 1300px;
-    margin: 0 auto;
-  }
-  // @include respond.respond(xs,down) {
-  //   padding: 10px 16px;
-  //   &__banner {
-  //     padding: 0 0 36px 0;
-  //   }
-  //   .banner__title {
-  //     font-size: var(--font-32);
-  //   }
-  //   .banner__subtitle {
-  //     padding-top: 12px;
-  //     width: 90%;
-  //   }
-  //   .banner__img {
-  //     margin: 186px 0 0 0;
-  //   }
-  // }
 }
 // sub banner -----------------------
 .sub-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  @include respond.respond-between(992px, 1310px) {
+    padding: 0 20px;
+  }
+  @include respond.respond-between(0, 992px) {
+    padding: 0 20px;
+  }
   &__wrap {
-    margin: 40px 0;
     padding: 30px 60px;
     border-radius: 20px;
-    background-image: url('/images/sub-banner-bg.jpg');
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
+    background: linear-gradient(270deg, #67a9ff, #5555ff);
     width: 1100px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     gap: 30px;
+    @include respond.respond-between(992px, 1310px) {
+      width: 940px;
+      margin: 0;
+      padding: 26px 30px;
+    }
+    @include respond.respond(md, only) {
+      padding: 20px 30px;
+    }
+    @include respond.respond(sm, only) {
+      flex-flow: column nowrap;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 30px;
+    }
+    @include respond.respond(xs, only) {
+      flex-flow: column nowrap;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 30px;
+    }
   }
   &__left {
+    display: flex;
+    align-items: center;
     font-size: var(--font-26);
     font-weight: 500;
-    color: rgb(240 240 240);
+    color: var(--white);
+    @include respond.respond(md, only) {
+      font-size: var(--font-23);
+    }
+    @include respond.respond(sm, only) {
+      font-size: var(--font-23);
+    }
+    @include respond.respond(xs, down) {
+      font-size: var(--font-23);
+    }
   }
   &__center {
     width: 4px;
     height: initial;
-    background: rgb(255, 255, 255);
+    background: var(--white);
     transform: rotate(12deg);
     border-radius: 99px;
+    @include respond.respond(sm, only) {
+      width: 100%;
+      height: 2px;
+      transform: rotate(0deg);
+    }
+    @include respond.respond(xs, only) {
+      width: 100%;
+      height: 2px;
+      transform: rotate(0deg);
+    }
   }
   &__right {
     display: flex;
@@ -157,26 +137,42 @@
   }
   &___right-text {
     font-size: var(--font-16);
-    color: rgb(240 240 240);
+    color: var(--white);
   }
-  &___right-button {
+  &___right-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: var(--font-16);
     font-weight: 600;
-    background-color: var(--white);
-    color: rgb(94 125 254);
+    background: rgb(255 171 93);
+    color: var(--white);
     border: none;
     border-radius: 99px;
     width: 300px;
     height: 40px;
+    transition: all 0.2s ease-out;
+  }
+  &___right-link:hover {
+    transform: translateY(-2.5px);
+    background: rgb(255 171 93);
+    color: var(--white);
   }
 }
 
 .section {
+  &__width {
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
+    @include respond.respond-between(0, 1310px) {
+      width: 100%;
+    }
+  }
   &__title.ant-typography {
+    position: relative;
     padding: 8px;
     border-radius: 99px;
-    // border-bottom: 2px solid var(--blue-ice);
-    // background: linear-gradient(90deg, rgb(255 255 255), rgb(121 179 255) 260%);
     cursor: default;
     color: var(--than);
     @include respond.respond(xs, only) {
@@ -198,20 +194,23 @@
   &--activity .section__title {
     margin: 0 0 90px 0;
     @include respond.respond(xs, only) {
-      margin: 0 0 90px 10px;
+      margin: 0 0 70px 10px;
     }
   }
   &--products {
-    padding: 20px 60px;
-    background: rgb(242 246 255);
+    padding: 20px 0;
+    background: rgb(82 176 243 / 8%);
     @include respond.respond(lg, only) {
-      padding: 0 0 10px 0;
+      padding: 10px 0;
     }
     @include respond.respond(md, only) {
-      padding: 0 0 10px 0;
+      padding: 10px 0;
+    }
+    @include respond.respond(sm, only) {
+      padding: 10px 0;
     }
     @include respond.respond(xs, only) {
-      padding: 0 0 10px 0;
+      padding: 10px 0;
     }
     .section__title {
       margin: 0 0 36px 0;
@@ -224,14 +223,10 @@
     }
   }
   &--fqa {
-    padding: 0;
+    padding: 20px 0;
     .section__title {
-      margin: 0 0 36px 0;
+      margin: 0 0 26px 0;
     }
-  }
-  &__width {
-    width: 1300px;
-    margin: 0 auto;
   }
   // @include mixins.respond(xs) {
   //   &__title {
@@ -250,26 +245,30 @@
 }
 // field-activity -----------------------------
 .field-activity {
-  @include respond.respond(md, only) {
-    padding: 0 20px;
-  }
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
-    @include respond.respond-between(768px, 1080px) {
+    @include respond.respond-between(1080px, 1350px) {
       grid-template-columns: 1fr 1fr;
       justify-content: center;
       gap: 80px 60px;
+      padding: 0 40px;
     }
-    @include respond.respond-between(0, 768px) {
+    @include respond.respond-between(768px, 1079px) {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      gap: 80px 60px;
+      padding: 0 20px;
+    }
+    @include respond.respond-between(0, 767px) {
       grid-template-columns: 1fr;
       gap: 80px 0;
     }
     @include respond.respond(sm, only) {
-      padding: 0 60px;
+      padding: 0 20px;
     }
     @include respond.respond(xs, only) {
       padding: 0 20px;
@@ -365,6 +364,18 @@
     padding: 0 20px;
   }
   &__list {
+    @include respond.respond-between(1080px, 1350px) {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      gap: 80px 60px;
+      padding: 0 40px;
+    }
+    @include respond.respond-between(767px, 1080px) {
+      padding: 0 20px;
+    }
+    @include respond.respond-between(0, 767px) {
+      padding: 0;
+    }
   }
   &__item {
     margin: 0 0 40px 0;
@@ -401,6 +412,7 @@
       align-items: center;
       gap: 12px;
       padding: 0 16px;
+      padding: 0 40px;
     }
   }
   &__card .ant-typography {
@@ -420,6 +432,9 @@
     width: 6px;
     border-radius: 99px;
     background: rgb(167, 189, 242);
+    @include respond.respond(xs, only) {
+      left: -16px;
+    }
   }
   &__img.ant-image-img {
     width: 180px;
@@ -440,274 +455,31 @@
   &__desc-phu {
     padding: 0 0 0 40px;
   }
-  // @include mixins.respond(xs) {
-  //   .featured-products__body {
-  //     gap: 10px;
-  //     flex-flow: column nowrap;
-  //     align-items: center;
-  //     padding: 0 8px;
-  //   }
-  //   &__item {
-  //     margin: 0 0 40px 0;
-  //   }
-  //   &__img.ant-image-img {
-  //     width: 200px;
-  //   }
-  // }
 }
 
-// carousel ------------------------------------
-// .employee-team {
-//   padding: 30px 80px;
-//   // &__carousel {
-//   // }
-//   @include respond.respond(md, down) {
-//     padding: 20px 10px;
-//   }
-//   &__img {
-//     border-radius: 5px;
-//     overflow: hidden;
-//   }
-//   &__members {
-//     padding: 30px 0;
-//     @include respond.respond(md, down) {
-//       padding: 10px 0;
-//     }
-//   }
-//   &__lists {
-//     display: flex;
-//     flex-flow: row wrap;
-//     justify-content: flex-start;
-//     align-items: center;
-//     gap: 26px;
-//     @include respond.respond-between(0, 375px) {
-//       flex-flow: column nowrap;
-//     }
-//     @include respond.respond-between(376px, 550px) {
-//       justify-content: center;
-//     }
-//     @include respond.respond(md, down) {
-//       gap: 16px;
-//     }
-//   }
-//   &__item {
-//     min-width: 160px;
-//     display: flex;
-//     flex-flow: column nowrap;
-//     justify-content: center;
-//     align-items: center;
-//   }
-//   &__item .ant-image .ant-image-img {
-//     height: 69px;
-//     width: 69px;
-//     border-radius: 50%;
-//   }
-//   &__member-img {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 8px;
-//     position: relative;
-//     background: var(--grd-primary);
-//     border-radius: 50%;
-//   }
-//   &__bg-manager {
-//     background: linear-gradient(169deg, #ffd900, #b45264 93.68%);
-//   }
-//   &__info {
-//     margin: 16px 0 0 0;
-//     display: flex;
-//     flex-flow: column nowrap;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 10px;
-//     background: rgb(163 132 253 / 9%);
-//     padding: 8px 12px;
-//     border-radius: 16px;
-//     width: 100%;
-//   }
-//   &__info-manager {
-//     background: rgb(206 129 65 / 23%);
-//   }
-//   &__position {
-//     font-size: var(--font-14);
-//     font-weight: 500;
-//     color: var(--charcoal-dark);
-//     @include respond.respond(md, down) {
-//       font-size: var(--font-13);
-//     }
-//   }
-//   &__name {
-//     font-size: var(--font-16);
-//     font-weight: 600;
-//     color: var(--than);
-//     @include respond.respond(md, down) {
-//       font-size: var(--font-13);
-//     }
-//   }
-//   //   @include respond.respond(xls, down) {
-//   //   &__layout {
-//   //     width: 100%;
-//   //     padding: 0 20px;
-//   //   }
-//   // }
-//   // @include respond.respond-between(740px, 1300px) {
-//   //   &__left {
-//   //     flex-direction: row-reverse;
-//   //   }
-//   // }
-// }
-
-.recruitment {
-  padding: 0 0 40px 0;
-  @include respond.respond(md, only) {
-    padding: 0 20px;
-  }
-  @include respond.respond(xs, only) {
-    padding: 0 20px;
-  }
-  &__form-filter {
-    padding: 10px 0 26px 0;
-  }
-  &__row-filter {
-    @include respond.respond(md, only) {
-      align-items: flex-end;
-    }
-    @include respond.respond(sm, only) {
-      align-items: flex-end;
-    }
-    @include respond.respond(xs, only) {
-      align-items: flex-end;
-    }
-  }
-  .wrap-job-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 30px;
-    @include respond.respond(lg, only) {
-      grid-template-columns: 1fr 1fr;
-    }
-    @include respond.respond(md, only) {
-      grid-template-columns: 1fr;
-    }
-    @include respond.respond(sm, only) {
-      grid-template-columns: 1fr;
-    }
-    @include respond.respond(xs, only) {
-      grid-template-columns: 1fr;
-    }
-  }
-  &__job-card.ant-card {
-    border-radius: 15px;
-    color: var(--than);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    transition: all 0.26s ease-out;
-    position: relative;
-  }
-  &__job-card.ant-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
-  }
-  &__job-card.ant-card .ant-card-body {
-    padding: 20px;
-    @include respond.respond(lg, only) {
-      padding: 16px;
-    }
-  }
-  &__job-body {
-    // display: flex;
-    // flex-flow: row nowrap;
-    // justify-content: flex-start;
-    // gap: 114px;
-    // @include respond.respond(xs, only) {
-    //   justify-content: space-between;
-    //   gap: 20px;
-    // }
-  }
-  &__job-img {
-  }
-  &__job-title.ant-typography {
-    color: var(--than);
-  }
-  &__job-info {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    gap: 40px;
-    @include respond.respond(lg, only) {
-      gap: 20px;
-    }
-    @include respond.respond(xs, only) {
-      flex-flow: column;
-      gap: 16px;
-    }
-  }
-  &__job-info .ant-image .ant-image-img {
-    width: 99px;
-    @include respond.respond(lg, only) {
-      width: 66px;
-    }
-  }
-  &__job-item {
-    padding-bottom: 6px;
-    font-size: var(--font-15);
-  }
-  &__job-item.company-name {
-    font-size: var(--font-17);
-    font-weight: 500;
-  }
-  &__job-icon {
-    width: 20px;
-    color: var(--blue);
-    font-size: var(--font-18);
-  }
-  &__job-desc {
-    margin: 0 0 0 6px;
-  }
-  &__job-time-update {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    @include respond.respond(lg, only) {
-      top: 16px;
-      right: 16px;
-    }
-  }
-}
-.form-item-input .ant-input-affix-wrapper {
-  border-radius: 10px;
-}
-.form-item-select .ant-select-single .ant-select-selector {
-  border-radius: 10px;
-}
-.btn-search {
-  padding: 4px 16px;
-  color: var(--white);
-  background: var(--blue);
-  border: solid 1px var(--blue);
-  font-weight: 600;
-  transition: all 0.2s ease-out;
-  border-radius: 10px;
-  height: 34px;
-}
-.btn-search.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
-  border: solid 1px var(--blue);
-  color: var(--blue);
-  background: white;
-  opacity: 0.9;
-}
-
-// FAQ -----------------------
-.faq {
+// FQA -----------------------
+.fqa {
   display: flex;
   flex-flow: row nowrap;
-  padding: 0 0 0 16px;
-  @include respond.respond(md, only) {
+  padding: 0 16px;
+  @include respond.respond-between(1080px, 1350px) {
+    padding: 0 40px;
+  }
+    @include respond.respond-between(992px, 1080px) {
     padding: 0 20px;
+  }
+  @include respond.respond(md, only) {
+    padding: 0 20px 16px 20px;
+  }
+  @include respond.respond(sm, only) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 16px 16px 16px;
   }
   @include respond.respond(xs, only) {
     flex-direction: column-reverse;
-    padding: 0 20px;
+    align-items: center;
+    padding: 0 16px 16px 16px;
   }
   &__list {
     flex: 1;
@@ -741,6 +513,9 @@
     @include respond.respond(md, only) {
       flex: initial;
     }
+    @include respond.respond(sm, only) {
+      flex: initial;
+    }
     @include respond.respond(xs, only) {
       flex: initial;
     }
@@ -751,6 +526,9 @@
       width: 360px;
     }
     @include respond.respond(md, only) {
+      width: 260px;
+    }
+    @include respond.respond(sm, only) {
       width: 260px;
     }
     @include respond.respond(xs, only) {

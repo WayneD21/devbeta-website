@@ -16,19 +16,4 @@
   min-height: 100vh;
 }
 .main-layout {
-  // width: 1300px;
-  // margin: 64px auto 20px auto;
-  @include respond.respond-between(0, 768px) {
-    padding: 0 10px;
-  }
-  @include respond.respond-between(768px, 991px) {
-    padding: 0 20px;
-  }
-  @include respond.respond-between(992px, 1350px) {
-    padding: 0 26px;
-    width: 100%;
-  }
-  @include respond.respond-between(0, 1350px) {
-    width: 100%;
-  }
 }

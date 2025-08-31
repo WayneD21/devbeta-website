@@ -14,7 +14,7 @@
     width: 1300px;
     margin: 0 auto;
     padding: 0;
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue-ice-30);
     @include respond.respond-between(0, 1350px) {
       width: 100%;
       padding: 0 20px;
